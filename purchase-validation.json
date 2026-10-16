@@ -1,0 +1,1168 @@
+{
+  "https://shop.ingramspark.com/b/084?params=cKicxujLdXC5yAc7CipPFDPpsstyiNmyS2Uc5pANIQE": {
+    "url": "https://shop.ingramspark.com/b/084?params=cKicxujLdXC5yAc7CipPFDPpsstyiNmyS2Uc5pANIQE",
+    "expectedBooks": [
+      {
+        "title": "The Paradise of the Devil",
+        "slug": "the-paradise-of-the-devil",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.157989+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=cKicxujLdXC5yAc7CipPFDPpsstyiNmyS2Uc5pANIQE",
+    "pageTitle": "Buy The Paradise Of The Devil",
+    "actualTitle": "The Paradise Of The Devil",
+    "htmlBytes": 7698,
+    "matches": [
+      {
+        "title": "The Paradise of the Devil",
+        "slug": "the-paradise-of-the-devil",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\125fd7840deb.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=YtbMhyCLJngZWljfdLTdmmLRmQU0q3edT2iJpKNhFs7": {
+    "url": "https://shop.ingramspark.com/b/084?params=YtbMhyCLJngZWljfdLTdmmLRmQU0q3edT2iJpKNhFs7",
+    "expectedBooks": [
+      {
+        "title": "The Paradise of the Devil",
+        "slug": "the-paradise-of-the-devil",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.157989+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=YtbMhyCLJngZWljfdLTdmmLRmQU0q3edT2iJpKNhFs7",
+    "pageTitle": "Buy The Paradise Of The Devil",
+    "actualTitle": "The Paradise Of The Devil",
+    "htmlBytes": 7700,
+    "matches": [
+      {
+        "title": "The Paradise of the Devil",
+        "slug": "the-paradise-of-the-devil",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\39a8915fa80b.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=r3VTQg19IL9zaV17oZW10Zrz3XraScbaQQr1HYbWBIS": {
+    "url": "https://shop.ingramspark.com/b/084?params=r3VTQg19IL9zaV17oZW10Zrz3XraScbaQQr1HYbWBIS",
+    "expectedBooks": [
+      {
+        "title": "The Vulture Will Lead You to Death",
+        "slug": "the-vulture-will-lead-you-to-death",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.157989+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=r3VTQg19IL9zaV17oZW10Zrz3XraScbaQQr1HYbWBIS",
+    "pageTitle": "Buy The Vulture Will Lead You To Death",
+    "actualTitle": "The Vulture Will Lead You To Death",
+    "htmlBytes": 7627,
+    "matches": [
+      {
+        "title": "The Vulture Will Lead You to Death",
+        "slug": "the-vulture-will-lead-you-to-death",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\e1bea03fc425.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=10fieAMclHJID6T8ZRshBEcRHNID9IMOJc2wfFlLR7j": {
+    "url": "https://shop.ingramspark.com/b/084?params=10fieAMclHJID6T8ZRshBEcRHNID9IMOJc2wfFlLR7j",
+    "expectedBooks": [
+      {
+        "title": "The Vulture Will Lead You to Death",
+        "slug": "the-vulture-will-lead-you-to-death",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.157989+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=10fieAMclHJID6T8ZRshBEcRHNID9IMOJc2wfFlLR7j",
+    "pageTitle": "Buy The Vulture Will Lead You To Death",
+    "actualTitle": "The Vulture Will Lead You To Death",
+    "htmlBytes": 7626,
+    "matches": [
+      {
+        "title": "The Vulture Will Lead You to Death",
+        "slug": "the-vulture-will-lead-you-to-death",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\5a3c307de8a0.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=fyhiQfPMx9ki9h4AEz9YBX59TWt3N2VHr1FuHou5DkG": {
+    "url": "https://shop.ingramspark.com/b/084?params=fyhiQfPMx9ki9h4AEz9YBX59TWt3N2VHr1FuHou5DkG",
+    "expectedBooks": [
+      {
+        "title": "The Vector",
+        "slug": "the-vector",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.157989+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=fyhiQfPMx9ki9h4AEz9YBX59TWt3N2VHr1FuHou5DkG",
+    "pageTitle": "Buy The Vector",
+    "actualTitle": "The Vector",
+    "htmlBytes": 7857,
+    "matches": [
+      {
+        "title": "The Vector",
+        "slug": "the-vector",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\be511a646081.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=jcKAoXNfvkBvq3F0w7HXquJZ02Q2casTElqJyRstDQe": {
+    "url": "https://shop.ingramspark.com/b/084?params=jcKAoXNfvkBvq3F0w7HXquJZ02Q2casTElqJyRstDQe",
+    "expectedBooks": [
+      {
+        "title": "The Vector",
+        "slug": "the-vector",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.436258+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=jcKAoXNfvkBvq3F0w7HXquJZ02Q2casTElqJyRstDQe",
+    "pageTitle": "Buy The Vector",
+    "actualTitle": "The Vector",
+    "htmlBytes": 7858,
+    "matches": [
+      {
+        "title": "The Vector",
+        "slug": "the-vector",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\ee9d9696dd92.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=4UgrTpv21e0pN2cxZ4mxRYTAvqWqGySTDurXrVEpxJu": {
+    "url": "https://shop.ingramspark.com/b/084?params=4UgrTpv21e0pN2cxZ4mxRYTAvqWqGySTDurXrVEpxJu",
+    "expectedBooks": [
+      {
+        "title": "The Warning of Ramses",
+        "slug": "the-warning-of-ramses",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.453159+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=4UgrTpv21e0pN2cxZ4mxRYTAvqWqGySTDurXrVEpxJu",
+    "pageTitle": "Buy The Warning Of Ramses",
+    "actualTitle": "The Warning Of Ramses",
+    "htmlBytes": 7598,
+    "matches": [
+      {
+        "title": "The Warning of Ramses",
+        "slug": "the-warning-of-ramses",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\ab49f2173b61.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=1Yuy5LbMVFArL5THMOo0mIQLE2bWzyVv8Cq0D6rlpTM": {
+    "url": "https://shop.ingramspark.com/b/084?params=1Yuy5LbMVFArL5THMOo0mIQLE2bWzyVv8Cq0D6rlpTM",
+    "expectedBooks": [
+      {
+        "title": "The Warning of Ramses",
+        "slug": "the-warning-of-ramses",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.456159+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=1Yuy5LbMVFArL5THMOo0mIQLE2bWzyVv8Cq0D6rlpTM",
+    "pageTitle": "Buy The Warning Of Ramses",
+    "actualTitle": "The Warning Of Ramses",
+    "htmlBytes": 7596,
+    "matches": [
+      {
+        "title": "The Warning of Ramses",
+        "slug": "the-warning-of-ramses",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\7123ce0489cb.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=T1g5rKWc6Pdi8aKJpbRWcTYqs6KxlQwFHjYH7NS0jyw": {
+    "url": "https://shop.ingramspark.com/b/084?params=T1g5rKWc6Pdi8aKJpbRWcTYqs6KxlQwFHjYH7NS0jyw",
+    "expectedBooks": [
+      {
+        "title": "IFF: Identify Friend or Foe",
+        "slug": "iff-identify-friend-or-foe",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.462672+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=T1g5rKWc6Pdi8aKJpbRWcTYqs6KxlQwFHjYH7NS0jyw",
+    "pageTitle": "Buy IFF: Identify Friend Or Foe",
+    "actualTitle": "IFF: Identify Friend Or Foe",
+    "htmlBytes": 8021,
+    "matches": [
+      {
+        "title": "IFF: Identify Friend or Foe",
+        "slug": "iff-identify-friend-or-foe",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\8c7aab1ee415.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=Z9CXy1fL2e5NBYePqV4eeLkwyIkpIvEHh4yDnIgShhN": {
+    "url": "https://shop.ingramspark.com/b/084?params=Z9CXy1fL2e5NBYePqV4eeLkwyIkpIvEHh4yDnIgShhN",
+    "expectedBooks": [
+      {
+        "title": "IFF: Identify Friend or Foe",
+        "slug": "iff-identify-friend-or-foe",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.531458+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=Z9CXy1fL2e5NBYePqV4eeLkwyIkpIvEHh4yDnIgShhN",
+    "pageTitle": "Buy IFF: Identify Friend Or Foe",
+    "actualTitle": "IFF: Identify Friend Or Foe",
+    "htmlBytes": 8022,
+    "matches": [
+      {
+        "title": "IFF: Identify Friend or Foe",
+        "slug": "iff-identify-friend-or-foe",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\ad30f1ef4772.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=91D3CWjRX3mWZzxrlR36nu14nskKXQhgR5XsmznpD8x": {
+    "url": "https://shop.ingramspark.com/b/084?params=91D3CWjRX3mWZzxrlR36nu14nskKXQhgR5XsmznpD8x",
+    "expectedBooks": [
+      {
+        "title": "God’s Sword of Justice",
+        "slug": "god-s-sword-of-justice",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.564507+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=91D3CWjRX3mWZzxrlR36nu14nskKXQhgR5XsmznpD8x",
+    "pageTitle": "Buy God's Sword Of Justice",
+    "actualTitle": "God's Sword Of Justice",
+    "htmlBytes": 7788,
+    "matches": [
+      {
+        "title": "God’s Sword of Justice",
+        "slug": "god-s-sword-of-justice",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\7a0907f44937.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=EYNsYwJJlnIuCsichlx65sTdjHdVO0uH6Q6OerSd78A": {
+    "url": "https://shop.ingramspark.com/b/084?params=EYNsYwJJlnIuCsichlx65sTdjHdVO0uH6Q6OerSd78A",
+    "expectedBooks": [
+      {
+        "title": "God’s Sword of Justice",
+        "slug": "god-s-sword-of-justice",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.601948+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=EYNsYwJJlnIuCsichlx65sTdjHdVO0uH6Q6OerSd78A",
+    "pageTitle": "Buy God's Sword Of Justice",
+    "actualTitle": "God's Sword Of Justice",
+    "htmlBytes": 7788,
+    "matches": [
+      {
+        "title": "God’s Sword of Justice",
+        "slug": "god-s-sword-of-justice",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\f11ea5c1646f.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=hJHDk2urmDuAexXLymeIX7oEjuddwsTgQhJYVFIHHvE": {
+    "url": "https://shop.ingramspark.com/b/084?params=hJHDk2urmDuAexXLymeIX7oEjuddwsTgQhJYVFIHHvE",
+    "expectedBooks": [
+      {
+        "title": "Operation Glass Slipper",
+        "slug": "operation-glass-slipper",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.629815+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=hJHDk2urmDuAexXLymeIX7oEjuddwsTgQhJYVFIHHvE",
+    "pageTitle": "Buy Operation Glass Slipper",
+    "actualTitle": "Operation Glass Slipper",
+    "htmlBytes": 7726,
+    "matches": [
+      {
+        "title": "Operation Glass Slipper",
+        "slug": "operation-glass-slipper",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\4536a4ea267d.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=Y9hhyjIEutN8XWOvoPMHTD6zcwTpifxHsK1VXaEjN9m": {
+    "url": "https://shop.ingramspark.com/b/084?params=Y9hhyjIEutN8XWOvoPMHTD6zcwTpifxHsK1VXaEjN9m",
+    "expectedBooks": [
+      {
+        "title": "Operation Glass Slipper",
+        "slug": "operation-glass-slipper",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.642834+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=Y9hhyjIEutN8XWOvoPMHTD6zcwTpifxHsK1VXaEjN9m",
+    "pageTitle": "Buy Operation Glass Slipper",
+    "actualTitle": "Operation Glass Slipper",
+    "htmlBytes": 7725,
+    "matches": [
+      {
+        "title": "Operation Glass Slipper",
+        "slug": "operation-glass-slipper",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\711c1879531a.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=aXMAtX6gMIfxMk7ull6H3cKRA9ROfDRuEA6Eq6TTj60": {
+    "url": "https://shop.ingramspark.com/b/084?params=aXMAtX6gMIfxMk7ull6H3cKRA9ROfDRuEA6Eq6TTj60",
+    "expectedBooks": [
+      {
+        "title": "Operation Dragon Fire",
+        "slug": "operation-dragon-fire",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.728758+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=aXMAtX6gMIfxMk7ull6H3cKRA9ROfDRuEA6Eq6TTj60",
+    "pageTitle": "Buy OPERATION DRAGON FIRE",
+    "actualTitle": "OPERATION DRAGON FIRE",
+    "htmlBytes": 7910,
+    "matches": [
+      {
+        "title": "Operation Dragon Fire",
+        "slug": "operation-dragon-fire",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\36134d6e74a8.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=dLtOp85OZ7zfNpfucI3izs3xQKc2xxUrcdKP8lUmi91": {
+    "url": "https://shop.ingramspark.com/b/084?params=dLtOp85OZ7zfNpfucI3izs3xQKc2xxUrcdKP8lUmi91",
+    "expectedBooks": [
+      {
+        "title": "Operation Dragon Fire",
+        "slug": "operation-dragon-fire",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.765281+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=dLtOp85OZ7zfNpfucI3izs3xQKc2xxUrcdKP8lUmi91",
+    "pageTitle": "Buy OPERATION DRAGON FIRE",
+    "actualTitle": "OPERATION DRAGON FIRE",
+    "htmlBytes": 7023,
+    "matches": [
+      {
+        "title": "Operation Dragon Fire",
+        "slug": "operation-dragon-fire",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\ba73f74476ef.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=EFmbpdSMHWrFYmPsx3jMY1ZOqCBVk3fcxpRqthidh0v": {
+    "url": "https://shop.ingramspark.com/b/084?params=EFmbpdSMHWrFYmPsx3jMY1ZOqCBVk3fcxpRqthidh0v",
+    "expectedBooks": [
+      {
+        "title": "Bio-Level Three",
+        "slug": "bio-level-three",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.799564+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=EFmbpdSMHWrFYmPsx3jMY1ZOqCBVk3fcxpRqthidh0v",
+    "pageTitle": "Buy Bio-Level Three",
+    "actualTitle": "Bio-Level Three",
+    "htmlBytes": 7599,
+    "matches": [
+      {
+        "title": "Bio-Level Three",
+        "slug": "bio-level-three",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\ba59accadb2e.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=MshPqvHqcdp1aa6VmSfQXufQVnahNxpr7wLJQE54vw6": {
+    "url": "https://shop.ingramspark.com/b/084?params=MshPqvHqcdp1aa6VmSfQXufQVnahNxpr7wLJQE54vw6",
+    "expectedBooks": [
+      {
+        "title": "Bio-Level Three",
+        "slug": "bio-level-three",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.837693+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=MshPqvHqcdp1aa6VmSfQXufQVnahNxpr7wLJQE54vw6",
+    "pageTitle": "Buy Bio-Level Three",
+    "actualTitle": "Bio-Level Three",
+    "htmlBytes": 7007,
+    "matches": [
+      {
+        "title": "Bio-Level Three",
+        "slug": "bio-level-three",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\1b1d267602a0.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=fITtykIBLSma6zmI4ngjBH9e6CMfHM3OQXe0EszvS3Z": {
+    "url": "https://shop.ingramspark.com/b/084?params=fITtykIBLSma6zmI4ngjBH9e6CMfHM3OQXe0EszvS3Z",
+    "expectedBooks": [
+      {
+        "title": "Operation Dragon Claw",
+        "slug": "operation-dragon-claw",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.861294+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=fITtykIBLSma6zmI4ngjBH9e6CMfHM3OQXe0EszvS3Z",
+    "pageTitle": "Buy OPERATION DRAGON CLAW",
+    "actualTitle": "OPERATION DRAGON CLAW",
+    "htmlBytes": 7589,
+    "matches": [
+      {
+        "title": "Operation Dragon Claw",
+        "slug": "operation-dragon-claw",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\4c8b805454c0.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=CVpbqNpkxQC109QK6K1BT9ehONPonPAMEZiLAOkWDYz": {
+    "url": "https://shop.ingramspark.com/b/084?params=CVpbqNpkxQC109QK6K1BT9ehONPonPAMEZiLAOkWDYz",
+    "expectedBooks": [
+      {
+        "title": "Operation Dragon Claw",
+        "slug": "operation-dragon-claw",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.874311+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=CVpbqNpkxQC109QK6K1BT9ehONPonPAMEZiLAOkWDYz",
+    "pageTitle": "Buy OPERATION DRAGON CLAW",
+    "actualTitle": "OPERATION DRAGON CLAW",
+    "htmlBytes": 7589,
+    "matches": [
+      {
+        "title": "Operation Dragon Claw",
+        "slug": "operation-dragon-claw",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\23e3c7e63a83.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=Mf1Nq0uQCE0FUVvfuA3czQWHgwFB4fuTvO3lFSjj0aT": {
+    "url": "https://shop.ingramspark.com/b/084?params=Mf1Nq0uQCE0FUVvfuA3czQWHgwFB4fuTvO3lFSjj0aT",
+    "expectedBooks": [
+      {
+        "title": "Beyond Yesterday",
+        "slug": "beyond-yesterday",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.972640+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=Mf1Nq0uQCE0FUVvfuA3czQWHgwFB4fuTvO3lFSjj0aT",
+    "pageTitle": "Buy BEYOND YESTERDAY",
+    "actualTitle": "BEYOND YESTERDAY",
+    "htmlBytes": 7814,
+    "matches": [
+      {
+        "title": "Beyond Yesterday",
+        "slug": "beyond-yesterday",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\901bffbbb8d3.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=tNVtRbAWylGIyJU0eckdWg4a5YSOYwBYZi3ddhyuqZ2": {
+    "url": "https://shop.ingramspark.com/b/084?params=tNVtRbAWylGIyJU0eckdWg4a5YSOYwBYZi3ddhyuqZ2",
+    "expectedBooks": [
+      {
+        "title": "Beyond Yesterday",
+        "slug": "beyond-yesterday",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.972640+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=tNVtRbAWylGIyJU0eckdWg4a5YSOYwBYZi3ddhyuqZ2",
+    "pageTitle": "Buy BEYOND YESTERDAY",
+    "actualTitle": "BEYOND YESTERDAY",
+    "htmlBytes": 7813,
+    "matches": [
+      {
+        "title": "Beyond Yesterday",
+        "slug": "beyond-yesterday",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\b39586e527da.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=SLxMMsENvE2BzAd0ZimCYol6YZ0KvXtYhPRvgAzMZ8Z": {
+    "url": "https://shop.ingramspark.com/b/084?params=SLxMMsENvE2BzAd0ZimCYol6YZ0KvXtYhPRvgAzMZ8Z",
+    "expectedBooks": [
+      {
+        "title": "Code Cold Fire Alert",
+        "slug": "code-cold-fire-alert",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:56.994677+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=SLxMMsENvE2BzAd0ZimCYol6YZ0KvXtYhPRvgAzMZ8Z",
+    "pageTitle": "Buy Code Cold Fire Alert",
+    "actualTitle": "Code Cold Fire Alert",
+    "htmlBytes": 7919,
+    "matches": [
+      {
+        "title": "Code Cold Fire Alert",
+        "slug": "code-cold-fire-alert",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\2c730497c04f.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=ZpRXdFjwiNUrcvh6mkrOfCqqDHRykrVeBkEEe4Y7vUE": {
+    "url": "https://shop.ingramspark.com/b/084?params=ZpRXdFjwiNUrcvh6mkrOfCqqDHRykrVeBkEEe4Y7vUE",
+    "expectedBooks": [
+      {
+        "title": "Code Cold Fire Alert",
+        "slug": "code-cold-fire-alert",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.026445+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=ZpRXdFjwiNUrcvh6mkrOfCqqDHRykrVeBkEEe4Y7vUE",
+    "pageTitle": "Buy Code Cold Fire Alert",
+    "actualTitle": "Code Cold Fire Alert",
+    "htmlBytes": 7918,
+    "matches": [
+      {
+        "title": "Code Cold Fire Alert",
+        "slug": "code-cold-fire-alert",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\b72b7cd28756.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=oL1I9wJ1JychdigKkVtsEJXIlndxKbgtiGxv6BvLwF6": {
+    "url": "https://shop.ingramspark.com/b/084?params=oL1I9wJ1JychdigKkVtsEJXIlndxKbgtiGxv6BvLwF6",
+    "expectedBooks": [
+      {
+        "title": "Trump’s Brass Escalator",
+        "slug": "trump-s-brass-escalator",
+        "sourceLinkIndex": 0
+      },
+      {
+        "title": "Sandstorm",
+        "slug": "sandstorm",
+        "sourceLinkIndex": 0
+      },
+      {
+        "title": "Massive Vinegar Joe Platform",
+        "slug": "massive-vinegar-joe-platform",
+        "sourceLinkIndex": 0
+      },
+      {
+        "title": "The Scorpion Sting",
+        "slug": "the-scorpion-sting",
+        "sourceLinkIndex": 0
+      },
+      {
+        "title": "Daughter of the Scorpion",
+        "slug": "daughter-of-the-scorpion",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.098317+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=oL1I9wJ1JychdigKkVtsEJXIlndxKbgtiGxv6BvLwF6",
+    "pageTitle": "Buy Daughter Of The Scorpion: Designer Biological Weapon of Mass Destruction",
+    "actualTitle": "Daughter Of The Scorpion: Designer Biological Weapon of Mass Destruction",
+    "htmlBytes": 7964,
+    "matches": [
+      {
+        "title": "Trump’s Brass Escalator",
+        "slug": "trump-s-brass-escalator",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "Sandstorm",
+        "slug": "sandstorm",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "Massive Vinegar Joe Platform",
+        "slug": "massive-vinegar-joe-platform",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "The Scorpion Sting",
+        "slug": "the-scorpion-sting",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "Daughter of the Scorpion",
+        "slug": "daughter-of-the-scorpion",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "title_plus_subtitle"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\234f1b3ad956.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=gmH1MbIAXedl1pjXdN1ASXWCkBkGGl13GMwgqIuKb41": {
+    "url": "https://shop.ingramspark.com/b/084?params=gmH1MbIAXedl1pjXdN1ASXWCkBkGGl13GMwgqIuKb41",
+    "expectedBooks": [
+      {
+        "title": "Trump’s Brass Escalator",
+        "slug": "trump-s-brass-escalator",
+        "sourceLinkIndex": 1
+      },
+      {
+        "title": "Sandstorm",
+        "slug": "sandstorm",
+        "sourceLinkIndex": 1
+      },
+      {
+        "title": "Massive Vinegar Joe Platform",
+        "slug": "massive-vinegar-joe-platform",
+        "sourceLinkIndex": 1
+      },
+      {
+        "title": "The Scorpion Sting",
+        "slug": "the-scorpion-sting",
+        "sourceLinkIndex": 1
+      },
+      {
+        "title": "Daughter of the Scorpion",
+        "slug": "daughter-of-the-scorpion",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.106359+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=gmH1MbIAXedl1pjXdN1ASXWCkBkGGl13GMwgqIuKb41",
+    "pageTitle": "Buy Daughter Of The Scorpion: Designer Biological Weapon of Mass Destruction",
+    "actualTitle": "Daughter Of The Scorpion: Designer Biological Weapon of Mass Destruction",
+    "htmlBytes": 7966,
+    "matches": [
+      {
+        "title": "Trump’s Brass Escalator",
+        "slug": "trump-s-brass-escalator",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "Sandstorm",
+        "slug": "sandstorm",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "Massive Vinegar Joe Platform",
+        "slug": "massive-vinegar-joe-platform",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "The Scorpion Sting",
+        "slug": "the-scorpion-sting",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": false,
+        "titleMatch": false,
+        "matchStatus": "mismatch"
+      },
+      {
+        "title": "Daughter of the Scorpion",
+        "slug": "daughter-of-the-scorpion",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": false,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "title_plus_subtitle"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\f9153853d8cf.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=ApnW4a5E6cGLqkQB6CAtcGPtOzsCnttOUMwtB1xc17r": {
+    "url": "https://shop.ingramspark.com/b/084?params=ApnW4a5E6cGLqkQB6CAtcGPtOzsCnttOUMwtB1xc17r",
+    "expectedBooks": [
+      {
+        "title": "Eagle’s Talon",
+        "slug": "eagle-s-talon",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.194509+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=ApnW4a5E6cGLqkQB6CAtcGPtOzsCnttOUMwtB1xc17r",
+    "pageTitle": "Buy Eagle's Talon",
+    "actualTitle": "Eagle's Talon",
+    "htmlBytes": 7635,
+    "matches": [
+      {
+        "title": "Eagle’s Talon",
+        "slug": "eagle-s-talon",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\45470226f3cc.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=aSBvd7mT7B1FPRIjFpWz5SOWMfmWkdX4AT4aMfw38xc": {
+    "url": "https://shop.ingramspark.com/b/084?params=aSBvd7mT7B1FPRIjFpWz5SOWMfmWkdX4AT4aMfw38xc",
+    "expectedBooks": [
+      {
+        "title": "Eagle’s Talon",
+        "slug": "eagle-s-talon",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.232784+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=aSBvd7mT7B1FPRIjFpWz5SOWMfmWkdX4AT4aMfw38xc",
+    "pageTitle": "Buy Eagle's Talon",
+    "actualTitle": "Eagle's Talon",
+    "htmlBytes": 7634,
+    "matches": [
+      {
+        "title": "Eagle’s Talon",
+        "slug": "eagle-s-talon",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\27a486703098.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=cFPWj7UuXFwZMai2eW1QYOFlbddiq46evFxlfAyLhBs": {
+    "url": "https://shop.ingramspark.com/b/084?params=cFPWj7UuXFwZMai2eW1QYOFlbddiq46evFxlfAyLhBs",
+    "expectedBooks": [
+      {
+        "title": "Birth of Wind",
+        "slug": "birth-of-wind",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.248199+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=cFPWj7UuXFwZMai2eW1QYOFlbddiq46evFxlfAyLhBs",
+    "pageTitle": "Buy Birth Of Wind",
+    "actualTitle": "Birth Of Wind",
+    "htmlBytes": 7504,
+    "matches": [
+      {
+        "title": "Birth of Wind",
+        "slug": "birth-of-wind",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\4e64faf3c516.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=QNmGm0LnQ6a8cdOJJJB3IwPXevuEx75L30YAiZgU0Kk": {
+    "url": "https://shop.ingramspark.com/b/084?params=QNmGm0LnQ6a8cdOJJJB3IwPXevuEx75L30YAiZgU0Kk",
+    "expectedBooks": [
+      {
+        "title": "Birth of Wind",
+        "slug": "birth-of-wind",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.281985+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=QNmGm0LnQ6a8cdOJJJB3IwPXevuEx75L30YAiZgU0Kk",
+    "pageTitle": "Buy Birth Of Wind",
+    "actualTitle": "Birth Of Wind",
+    "htmlBytes": 7504,
+    "matches": [
+      {
+        "title": "Birth of Wind",
+        "slug": "birth-of-wind",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\58b611e73a0e.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=wTycvMsg90lKl1sH6QfyXiv5G6jXRQdrJlwXuBccgNt": {
+    "url": "https://shop.ingramspark.com/b/084?params=wTycvMsg90lKl1sH6QfyXiv5G6jXRQdrJlwXuBccgNt",
+    "expectedBooks": [
+      {
+        "title": "The Wind’s Breathe",
+        "slug": "the-wind-s-breathe",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.287984+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=wTycvMsg90lKl1sH6QfyXiv5G6jXRQdrJlwXuBccgNt",
+    "pageTitle": "Buy The Wind's Breathe",
+    "actualTitle": "The Wind's Breathe",
+    "htmlBytes": 7436,
+    "matches": [
+      {
+        "title": "The Wind’s Breathe",
+        "slug": "the-wind-s-breathe",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\ec23999584e6.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=6skjOQoLM33PDjA24V74YByOvVDX5a3VX4PmiuSK4qR": {
+    "url": "https://shop.ingramspark.com/b/084?params=6skjOQoLM33PDjA24V74YByOvVDX5a3VX4PmiuSK4qR",
+    "expectedBooks": [
+      {
+        "title": "The Wind’s Breathe",
+        "slug": "the-wind-s-breathe",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.297510+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=6skjOQoLM33PDjA24V74YByOvVDX5a3VX4PmiuSK4qR",
+    "pageTitle": "Buy The Wind's Breathe",
+    "actualTitle": "The Wind's Breathe",
+    "htmlBytes": 7435,
+    "matches": [
+      {
+        "title": "The Wind’s Breathe",
+        "slug": "the-wind-s-breathe",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\07f6800b2536.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=2Y3RZWIwXEVK8eUMopHlDiBHGljzjW4RPZHG9yIM8rG": {
+    "url": "https://shop.ingramspark.com/b/084?params=2Y3RZWIwXEVK8eUMopHlDiBHGljzjW4RPZHG9yIM8rG",
+    "expectedBooks": [
+      {
+        "title": "Night Wind",
+        "slug": "night-wind",
+        "sourceLinkIndex": 0
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.402288+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=2Y3RZWIwXEVK8eUMopHlDiBHGljzjW4RPZHG9yIM8rG",
+    "pageTitle": "Buy Night Wind",
+    "actualTitle": "Night Wind",
+    "htmlBytes": 7474,
+    "matches": [
+      {
+        "title": "Night Wind",
+        "slug": "night-wind",
+        "sourceLinkIndex": 0,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\4dea49a8b119.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=QJkklJNCsuGQflar9YRLxXBXfO0rQZNtDWvRPJ9uyVy": {
+    "url": "https://shop.ingramspark.com/b/084?params=QJkklJNCsuGQflar9YRLxXBXfO0rQZNtDWvRPJ9uyVy",
+    "expectedBooks": [
+      {
+        "title": "Night Wind",
+        "slug": "night-wind",
+        "sourceLinkIndex": 1
+      }
+    ],
+    "observedAtUTC": "2026-10-15T19:43:57.434333+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=QJkklJNCsuGQflar9YRLxXBXfO0rQZNtDWvRPJ9uyVy",
+    "pageTitle": "Buy Night Wind",
+    "actualTitle": "Night Wind",
+    "htmlBytes": 7473,
+    "matches": [
+      {
+        "title": "Night Wind",
+        "slug": "night-wind",
+        "sourceLinkIndex": 1,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": null,
+    "format": null,
+    "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
+    "evidenceFile": "purchase-pages\\479ae3cdbb66.html"
+  }
+}
