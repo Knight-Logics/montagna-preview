@@ -341,8 +341,8 @@ void main(){
       pointer.x += (tx - pointer.x) * Math.min(1, dt * 2.2); pointer.y += (ty - pointer.y) * Math.min(1, dt * 2.2);
       const k = this.hero ? 1 : .55;
       if (!this.manualCam) {
-        this.par = [pointer.x * .022 * k, pointer.y * .014 * k - this.scroll * .05 * k];
-        this.zoom = 1.07 + this.scroll * (this.hero ? .16 : .06);
+        this.par = [pointer.x * .022 * k, pointer.y * .014 * k];
+        this.zoom = 1.07;
       }
       // lightning (hero + coast storms). Never more than two flickers per strike.
       if (this.hero || this.kind === 'coast') {
@@ -439,18 +439,10 @@ void main(){
 
   const scenes = nodes.map(n => new Scene(n));
   // scroll: dolly in, layers separate, and the whole scene sinks slower than the page
-  let sf = 0;
+  let sf = 0, scrolledAt = 0;
   function onScroll() {
     sf = 0;
-    for (const s of scenes) {
-      const host = s.node.parentElement, r = host.getBoundingClientRect();
-      s.scroll = paused ? 0 : clamp(-r.top / Math.max(1, r.height), 0, 1);
-      const shift = paused ? 0 : clamp(-r.top * (s.hero && innerWidth > 1180 ? .38 : .12), -80, s.hero ? 420 : 80);
-      s.node.style.setProperty('--scene-depth', shift + 'px');
-      if (host.classList.contains('saga-feature')) host.style.setProperty('--chapter-depth', (paused ? 0 : clamp((r.top - innerHeight * .1) * -.045, -26, 26)) + 'px');
-      if (paused && s.ready) s.draw();
-    }
-    document.documentElement.style.setProperty('--hero-progress', scenes[0] && scenes[0].hero ? String(scenes[0].scroll) : '0');
+    scrolledAt = performance.now();
   }
   const queue = () => { if (!sf) sf = requestAnimationFrame(onScroll); };
   addEventListener('scroll', queue, { passive: true }); addEventListener('resize', queue, { passive: true });
@@ -459,6 +451,7 @@ void main(){
 
   function loop(now) {
     raf = 0; if (paused || document.hidden || manual) { last = 0; return; }
+    if (now - scrolledAt < 180) { last = 0; if (scenes.some(s => s.visible)) raf = requestAnimationFrame(loop); return; }
     const dt = last ? Math.min((now - last) / 1000, .08) : 0; last = now;
     for (const s of scenes) if (s.visible) {
       s.time += dt; s.step(dt);

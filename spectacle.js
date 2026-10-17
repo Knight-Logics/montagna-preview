@@ -120,7 +120,7 @@
       q = 0;
       shelves.forEach(s => {
         const r = s.getBoundingClientRect(), p = clamp((innerHeight - r.top) / (innerHeight * .75), 0, 1);
-        [...s.children].forEach((v, i) => v.style.setProperty('--rv', motionOff() ? 1 : clamp(p * 1.6 - i * .22, 0, 1).toFixed(3)));
+        [...s.children].forEach((v, i) => { const next = motionOff() ? '1' : clamp(p * 1.6 - i * .22, 0, 1).toFixed(3); if (v.dataset.rv !== next) { v.dataset.rv = next; v.style.setProperty('--rv', next); } });
       });
     };
     addEventListener('scroll', () => { if (!q) q = requestAnimationFrame(update); }, { passive: true }); addEventListener('resize', update); update();
