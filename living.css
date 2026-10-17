@@ -189,3 +189,43 @@ html:has(body.folio-page){scroll-padding-top:15px}
 @media(max-width:700px){.hero-world-label{right:6vw;left:6vw;width:auto;bottom:115px}.hero .scene-still,.scene-wind .scene-still{background-position:84% center}.hero{min-height:930px}.hero-world-label>span:last-child{font-size:10px}.hero-world-label>.eyebrow{font-size:7px}#worlds{padding-bottom:50px}.saga-feature{display:block;padding:75px 7vw 70px;min-height:0}.saga-copy h2{font-size:67px;margin:25px 0}.saga-copy>p{font-size:12px;max-width:390px}.saga-copy>.eyebrow{font-size:8px}.saga-shelf{padding-top:60px}.saga-shelf-label{font-size:6px;margin-bottom:25px}.saga-volumes{gap:18px}.saga-volume h3{font-size:19px}.saga-volume-no{font-size:6px;margin:18px 0 10px}.saga-volume:nth-child(2){padding-top:23px}.saga-volume:nth-child(3){padding-top:46px}.saga-watermark{font-size:240px;bottom:-35px}.collection-bridge{display:block;padding:30px 7vw}.collection-bridge p{font-size:12px}.collection-bridge p span{font-size:10px;margin:7px 0 22px}.collection-bridge .text-link{font-size:10px}.discovery-grid{grid-template-columns:1fr;gap:36px}.discovery-grid>a{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.discovery-grid>a>span{grid-column:1/3;font-size:7px}.discovery-grid h3{font-size:33px;margin:23px 0}.discovery-grid p{font-size:11px;margin:23px 0}.discovery-grid b{font-size:10px;grid-column:1/3}.film-context>p{font-size:12px}.film-world-links{flex-direction:column;align-items:flex-start}.footer-main{padding-bottom:40px}.site-footer.footer-redesign{padding-top:50px}.footer-identity{display:block}.footer-wordmark{font-size:34px}.footer-wordmark em{font-size:47px}.footer-wordmark>span{font-size:6px}.footer-identity>p{margin:23px 0 18px}.footer-navigation{grid-template-columns:1fr 1fr;gap:35px 23px}.footer-navigation>div{gap:12px}.footer-navigation h2{font-size:8px;margin-bottom:6px}.footer-navigation a{font-size:11px}.footer-colophon{display:grid;grid-template-columns:1fr auto;font-size:8px;padding:22px 0;gap:14px}.footer-colophon>span:nth-child(2){grid-column:1;grid-row:2}.footer-colophon>a{grid-column:2;grid-row:1/3}.folio-dormant{left:5vw;right:5vw}}
 @media(max-width:370px){.saga-copy h2{font-size:58px}.saga-volume h3{font-size:16px}.saga-volumes{gap:13px}.hero-world-label>span:last-child{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.living-scene{transform:none;will-change:auto}.saga-shelf,.js .saga-shelf.reveal.visible{transform:none}.saga-cover,.discovery-grid>a{transition:none}}
+
+/* The open book fills the screen under the header. The note sits in the heading, and the controls sit under the pages. */
+.folio-scan{background:#f4efe4}
+.folio-scan img{width:100%;height:100%;object-fit:contain;pointer-events:none;background:#f4efe4}
+#book-reader{--folio-offset:calc(34px + clamp(86px,7vw,118px));scroll-margin-top:var(--folio-offset)}
+.folio-workbench{display:flex;flex-direction:column;justify-content:flex-start;gap:10px;min-height:calc(100svh - var(--folio-offset) - 16px);max-height:calc(100svh - var(--folio-offset) - 16px);padding:14px 4vw 12px;overflow:hidden;box-sizing:border-box}
+.folio-heading{max-width:none;width:100%;margin:0;align-items:start;gap:24px}
+.folio-heading>div:first-child{flex:1 1 auto;min-width:0}
+.folio-heading h2{font-size:clamp(26px,2.4vw,40px);line-height:1.05;margin-top:4px}
+.folio-note{flex:0 1 22rem;min-width:0;text-align:right}
+.folio-note .eyebrow{color:var(--gold);font-size:11px}
+.folio-note-title{font-family:var(--serif);font-size:clamp(18px,1.4vw,26px);line-height:1.15;color:#f7f1e4;margin:4px 0 6px}
+.folio-note p{font-size:14px;line-height:1.45;color:#d7e0d4}
+.folio-note .folio-side-count{margin-top:6px;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#d8c69e}
+.folio-layout{flex:1;min-height:0;width:100%;margin:0;display:flex}
+.folio-native-panel{flex:1;min-height:0;min-width:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.folio-theatre{flex:0 0 auto;min-height:0;max-width:100%;margin:0 auto;overflow:hidden}
+.folio-navigation{max-width:none;width:100%;margin:0}
+.folio-progress{max-width:none;width:100%}
+.folio-toolbar{position:static;top:auto;max-width:none;width:100%;margin:0;padding:8px 0 0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-top:1px solid #ffffff29;border-bottom:0}
+.folio-mode-tabs button{font-size:14px;padding:8px 14px}
+.folio-navigation button,.folio-page-status,.folio-expand{font-size:14px}
+.folio-workbench[data-mode="text"]{min-height:0;max-height:none;overflow:visible}
+.folio-workbench[data-mode="text"] .folio-layout{display:none}
+.folio-workbench:fullscreen,.folio-expanded{display:flex;flex-direction:column;gap:10px;width:100%;height:100%;min-height:100%;max-height:none;overflow:hidden;padding:12px 3vw}
+.folio-workbench:fullscreen .folio-heading,.folio-expanded .folio-heading{margin:0}
+.folio-workbench:fullscreen .folio-heading h2,.folio-expanded .folio-heading h2{font-size:28px}
+.folio-workbench:fullscreen .folio-theatre,.folio-expanded .folio-theatre{height:100%;min-height:0;margin:0}
+@media (max-width:800px){
+  .folio-heading{display:block}
+  .folio-note{max-width:none;text-align:left;margin-top:8px}
+  .folio-note p{font-size:13px}
+}
+@media (min-width:1000px){
+  .animated-intro>.eyebrow,
+  .hero-catalog>.eyebrow,
+  .hero-world-label>.eyebrow,
+  .saga-copy>.eyebrow{font-size:clamp(12px,.8vw,14px)}
+  .hero-side,.hero-bottom,.genre-strip{font-size:clamp(11px,.75vw,13px)}
+}

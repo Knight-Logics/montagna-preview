@@ -3,7 +3,7 @@
 (() => {
   'use strict';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const motionOff = () => reduce.matches || document.documentElement.dataset.sceneMotion === 'paused';
+  const motionOff = () => document.documentElement.dataset.sceneMotion === 'paused';
   const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
 
   // ---- headline: wrap each word so it can condense out of the mist
@@ -89,15 +89,24 @@
     };
     const kick = () => { if (!raf) raf = requestAnimationFrame(tick); };
     new IntersectionObserver(es => { visible = es[0].isIntersecting; if (visible) kick(); }).observe(stage);
-    let moved = 0;
-    stage.addEventListener('pointerdown', e => { drag = { x: e.clientX, a: angle, t: performance.now(), lx: e.clientX }; moved = 0; target = null; vel = 0; stage.classList.add('dragging'); stage.setPointerCapture(e.pointerId); kick(); });
+    let moved = 0, pressHref = null;
+    stage.addEventListener('pointerdown', e => {
+      const link = e.target.closest && e.target.closest('.ring-item');
+      pressHref = link ? link.getAttribute('href') : null;
+      drag = { x: e.clientX, a: angle, t: performance.now(), lx: e.clientX }; moved = 0; target = null; vel = 0; stage.classList.add('dragging'); stage.setPointerCapture(e.pointerId); kick();
+    });
     stage.addEventListener('pointermove', e => {
       if (!drag) return; const dx = e.clientX - drag.x; moved = Math.max(moved, Math.abs(dx));
       angle = drag.a + dx * .22; const now = performance.now(), dtt = (now - drag.t) / 1000 || .016; vel = (e.clientX - drag.lx) * .22 / dtt; drag.t = now; drag.lx = e.clientX;
     });
     const end = () => { if (!drag) return; drag = null; stage.classList.remove('dragging'); idleUntil = performance.now() + 9000; if (Math.abs(vel) < 30) goTo(frontIndex()); kick(); };
-    stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', end);
-    items.forEach((it, i) => it.addEventListener('click', e => { if (moved > 6) { e.preventDefault(); return; } if (i !== frontIndex()) { e.preventDefault(); goTo(i); } }));
+    stage.addEventListener('pointerup', () => {
+      const href = pressHref, tap = moved <= 28;
+      end();
+      if (tap && href) location.assign(href);
+    });
+    stage.addEventListener('pointercancel', () => { pressHref = null; end(); });
+    items.forEach(it => it.addEventListener('click', e => { if (e.detail !== 0 && moved > 28) e.preventDefault(); }));
     document.querySelectorAll('[data-ring-step]').forEach(b => b.addEventListener('click', () => goTo(frontIndex() + Number(b.dataset.ringStep))));
     stage.addEventListener('keydown', e => { if (e.key === 'ArrowRight') goTo(frontIndex() + 1); if (e.key === 'ArrowLeft') goTo(frontIndex() - 1); });
     paint();

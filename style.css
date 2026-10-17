@@ -15,3 +15,25 @@
 @media(max-width:600px){.portfolio-reader{grid-template-columns:1fr;gap:45px}.portfolio-reader aside{position:static;max-height:250px;overflow:auto;border-bottom:1px solid var(--line);padding-bottom:20px}.portfolio-reader aside a{font-size:10px}.portfolio-toolbar{padding:25px 6vw}.portfolio-toolbar>span{font-size:7px;text-align:right;max-width:120px}.book-companion-link{display:block}.book-companion-link>.text-link{margin:20px 0}.book-companion-link>p{max-width:320px}.portfolio-section h2{font-size:36px}.portfolio-section p{font-size:22px}}
 
 .related-pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Sticky header and type that grows with the screen. */
+html{scroll-padding-top:168px}
+.preview-ribbon{position:fixed;top:0;left:0;right:0;z-index:50;height:34px;font-size:clamp(11px,.78vw,14px)}
+.site-header,.light-header .site-header{position:fixed;top:34px;left:0;right:0;width:100%;z-index:40;height:clamp(86px,7vw,118px);background:rgba(12,36,36,.58);color:var(--paper);border-bottom-color:rgba(247,244,236,.16)}
+.brand-name{font-size:clamp(12px,.95vw,16px)}
+@media (min-width:901px){
+  .site-header nav{flex-wrap:nowrap;font-size:clamp(14px,.95vw,18px);gap:clamp(12px,1.1vw,26px)}
+  .site-header nav a{white-space:nowrap}
+  .list-link{font-size:clamp(13px,.9vw,16px)}
+  .brand-monogram{font-size:clamp(44px,2.7vw,60px);width:clamp(56px,3.3vw,74px)}
+  .brand-monogram span{font-size:clamp(34px,2.1vw,48px)}
+  .eyebrow{font-size:clamp(11px,.78vw,13px)}
+  .page-intro>p:last-child{font-size:clamp(16px,1.05vw,20px);max-width:680px}
+}
+@media (min-width:1200px){
+  body{font-size:17px}
+  .hero-description{font-size:clamp(17px,1.05vw,20px)}
+}
+@media (min-width:1280px){
+  .site-header nav{font-size:clamp(16px,1.08vw,20px);gap:clamp(16px,1.35vw,28px)}
+}
