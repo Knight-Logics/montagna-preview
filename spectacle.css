@@ -64,6 +64,9 @@
 .feat-play{background:none;border:1px solid #ffffff55;color:var(--paper);padding:6px 12px;border-radius:30px;font:inherit;letter-spacing:inherit;cursor:pointer}
 .feat-play:hover{border-color:var(--gold);color:var(--gold)}
 .feat-nav{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:18px}
+.feat-buy{margin-top:8px}
+.feat-buy .buy-box{max-width:420px;margin:0 auto}
+@media(min-width:1181px){.hero{min-height:1080px}}
 .feat-dot{width:24px;height:3px;border:0;padding:0;background:#ffffff45;cursor:pointer;transition:background .3s,width .4s}
 .feat-dot[aria-current=true]{background:var(--gold);width:42px}
 .feat-arrow{background:none;border:1px solid #ffffff40;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:13px}

@@ -65,6 +65,7 @@
       dots.forEach((d, i) => d.setAttribute('aria-current', String(i === cur)));
       if (now) now.textContent = String(cur + 1).padStart(2, '0');
       announce(centre, instant);
+      window.MontagnaShop && window.MontagnaShop.syncFeatured(items[cur].dataset.slug);
       if (hover) { clearTimeout(tmr); left = DWELL; } else arm();
     };
     const hold = () => { if (hover) return; hover = true; clearTimeout(tmr); left = Math.max(500, due - performance.now()); feat.classList.add('held'); };

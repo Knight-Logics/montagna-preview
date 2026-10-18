@@ -10,7 +10,7 @@
 .scene-surface.ready{opacity:1}
 .scene-life{z-index:1}
 .scene-vignette{z-index:2;background:linear-gradient(90deg,#041b1c77 0%,#061d1d26 48%,#041a1a05 75%),linear-gradient(0deg,#04171970,transparent 70%)}
-.scene-grain{z-index:3;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.5' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px;mix-blend-mode:screen}
+.scene-grain{z-index:3;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/montagna-preview/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.5' filter='url(%23n)'/montagna-preview/%3E%3C/svg%3E");background-size:180px 180px;mix-blend-mode:screen}
 .scene-motion-toggle{font-family:Arial,sans-serif;font-size:18px;opacity:.8}
 .cinematic-page.light-header .site-header{color:var(--paper);border-bottom-color:#ffffff2c}
 .cinematic-page.light-header .brand-monogram{color:var(--gold)}
