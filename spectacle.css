@@ -152,3 +152,37 @@ dialog.film-dialog{border:0;padding:0;background:#000;width:min(1280px,94vw);max
   .hero-featured{animation:none}
 }
 html[data-scene-motion=paused] .b3d-hero,html[data-scene-motion=paused] .b3d-sheen,html[data-scene-motion=paused] .ring-aurora,html[data-scene-motion=paused] .feat-glow{animation-play-state:paused}
+
+/* ---- hero worlds (2026-10-17): each featured book brings its own living background.
+   motion.js swaps the worlds; the new one grows out of the featured book (--wx/--wy) behind a ring of its accent colour. */
+@property --accent{syntax:'<color>';inherits:true;initial-value:#d9bb80}
+@property --wr{syntax:'<percentage>';inherits:true;initial-value:165%}
+.hero[data-worlds]{transition:--accent 1.4s ease}
+.hero[data-worlds]>.living-scene{visibility:hidden;z-index:-4}
+.hero[data-worlds]>.living-scene.world-on{visibility:visible}
+.hero[data-worlds]>.living-scene.world-in{z-index:-3;-webkit-mask-image:radial-gradient(circle at var(--wx,66%) var(--wy,40%),#000 calc(var(--wr) - 11%),transparent var(--wr));mask-image:radial-gradient(circle at var(--wx,66%) var(--wy,40%),#000 calc(var(--wr) - 11%),transparent var(--wr));animation:worldIn 1.8s cubic-bezier(.62,0,.22,1) both}
+.hero[data-worlds]>.living-scene.world-in:after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(circle at var(--wx,66%) var(--wy,40%),transparent calc(var(--wr) - 16%),color-mix(in srgb,var(--accent) 38%,transparent) calc(var(--wr) - 3%),transparent var(--wr));mix-blend-mode:screen}
+@keyframes worldIn{from{--wr:0%}to{--wr:165%}}
+/* stills shown while a world's WebGL layer is still loading, roughly matched to each grade */
+.world-scorpion .scene-still{filter:sepia(.25) saturate(1.25) brightness(.92)}
+.world-dragon .scene-still{filter:brightness(.82) saturate(.9)}
+.world-cuba .scene-still{filter:sepia(.4) saturate(.85)}
+.world-talon .scene-still{filter:hue-rotate(185deg) saturate(.45) brightness(.82)}
+/* the world's accent colour runs through the featured panel, eyebrow and coordinates */
+.hero[data-worlds] .hero-featured{--gold:var(--accent)}
+.hero[data-worlds] .hero-content>.eyebrow,.hero[data-worlds] .hero-side span{color:var(--accent)}
+.hero[data-worlds] .feat-glow{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent) 0%,color-mix(in srgb,var(--accent) 8%,transparent) 32%,transparent 62%)}
+.hero[data-worlds] .feat-head{border-bottom-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.world-place{display:flex;align-items:baseline;gap:12px;letter-spacing:.2em}
+.world-place i{font-style:normal;color:#93a49e}
+.world-place b{font-weight:600;color:var(--accent);min-width:23ch;white-space:nowrap}
+/* dwell progress on the active dot; pauses while the visitor hovers the panel */
+.feat-dot{position:relative;overflow:hidden}
+.feat-dot[aria-current=true]{background:#ffffff40}
+.feat-dot[aria-current=true]:after{content:'';position:absolute;inset:0;background:var(--gold);transform-origin:left;transform:scaleX(0);animation:featProgress var(--dwell,11000ms) linear forwards}
+.hero-featured.held .feat-dot[aria-current=true]:after{animation-play-state:paused}
+html[data-scene-motion=paused] .feat-dot[aria-current=true]:after{animation:none;transform:none}
+@keyframes featProgress{to{transform:scaleX(1)}}
+@media(max-width:900px){.world-place i{display:none}.world-place b{min-width:0}}
+@media(max-width:600px){.world-place{display:none}}
+.hero[data-worlds] .feat-head{text-shadow:0 0 6px #000,0 0 16px #000c}

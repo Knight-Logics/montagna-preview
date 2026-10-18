@@ -27,12 +27,35 @@
     walk(h1);
   }
 
-  // ---- featured works carousel
+  // ---- featured works carousel. Each book carries its own world (motion.js listens for 'montagna:feature');
+  // it stays for data-dwell ms (11 s), the active dot fills as a progress bar and everything holds while hovered.
   const feat = document.querySelector('[data-featured]');
   if (feat) {
     const items = [...feat.querySelectorAll('.feat-item')], dots = [...feat.querySelectorAll('.feat-dot')], now = feat.querySelector('[data-feat-now]');
-    const n = items.length; let cur = 0, timer = 0, hover = false;
-    const show = k => {
+    const hero = feat.closest('.hero'), coords = hero && hero.querySelector('[data-world-coords]'), place = hero && hero.querySelector('[data-world-place]');
+    const DWELL = Number(feat.dataset.dwell) || 11000; feat.style.setProperty('--dwell', DWELL + 'ms');
+    const n = items.length; let cur = 0, tmr = 0, due = 0, left = DWELL, hover = false;
+    const glyphs = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const scramble = (el, text) => {
+      clearInterval(el._s); if (motionOff()) { el.textContent = text; return; }
+      let f = 0; el._s = setInterval(() => {
+        f++; const shown = Math.floor(f * 1.6);
+        el.textContent = [...text].map((ch, i) => /[\s°\/·.:,]/.test(ch) || i < shown ? ch : glyphs[(Math.random() * glyphs.length) | 0]).join('');
+        if (shown >= text.length) { clearInterval(el._s); el.textContent = text; }
+      }, 40);
+    };
+    const announce = (centre, instant) => {
+      const it = items[cur]; if (!hero || !it) return;
+      if (centre && centre.width) { const hr = hero.getBoundingClientRect(); hero.style.setProperty('--wx', ((centre.left + centre.width / 2 - hr.left) / hr.width * 100).toFixed(1) + '%'); hero.style.setProperty('--wy', ((centre.top + centre.height / 2 - hr.top) / hr.height * 100).toFixed(1) + '%'); }
+      if (it.dataset.accent) hero.style.setProperty('--accent', it.dataset.accent);
+      if (coords && it.dataset.coords && coords.textContent !== it.dataset.coords) scramble(coords, it.dataset.coords);
+      if (place && it.dataset.place && place.textContent !== it.dataset.place) scramble(place, it.dataset.place);
+      document.dispatchEvent(new CustomEvent('montagna:feature', { detail: { slug: it.dataset.slug, index: cur, instant: !!instant } }));
+    };
+    const arm = (ms = DWELL) => { clearTimeout(tmr); left = ms; due = performance.now() + ms; tmr = setTimeout(tick, ms); };
+    const tick = () => { if (hover || motionOff() || document.hidden) { arm(); return; } show(cur + 1); };
+    const show = (k, instant) => {
+      const slot = feat.querySelector('.feat-item[data-pos="0"] .feat-book'), centre = slot && slot.getBoundingClientRect(); // where the front book sits
       cur = (k + n) % n;
       items.forEach((it, i) => {
         let d = i - cur; if (d > n / 2) d -= n; if (d < -n / 2) d += n;
@@ -41,19 +64,27 @@
       });
       dots.forEach((d, i) => d.setAttribute('aria-current', String(i === cur)));
       if (now) now.textContent = String(cur + 1).padStart(2, '0');
+      announce(centre, instant);
+      if (hover) { clearTimeout(tmr); left = DWELL; } else arm();
     };
-    const auto = () => { clearInterval(timer); timer = setInterval(() => { if (!hover && !motionOff() && !document.hidden) show(cur + 1); }, 6200); };
-    feat.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => { show(cur + Number(b.dataset.step)); auto(); }));
-    dots.forEach(d => d.addEventListener('click', () => { show(Number(d.dataset.go)); auto(); }));
-    items.forEach((it, i) => it.querySelector('.feat-book').addEventListener('click', e => { if (it.dataset.pos !== '0') { e.preventDefault(); show(i); auto(); } }));
-    feat.addEventListener('pointerenter', () => hover = true); feat.addEventListener('pointerleave', () => { hover = false; feat.style.setProperty('--tilt-x', '0deg'); feat.style.setProperty('--tilt-y', '0deg'); });
+    const hold = () => { if (hover) return; hover = true; clearTimeout(tmr); left = Math.max(500, due - performance.now()); feat.classList.add('held'); };
+    const release = () => { if (!hover) return; hover = false; feat.classList.remove('held'); due = performance.now() + left; clearTimeout(tmr); tmr = setTimeout(tick, left); };
+    feat.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => show(cur + Number(b.dataset.step))));
+    dots.forEach(d => d.addEventListener('click', () => show(Number(d.dataset.go))));
+    items.forEach((it, i) => it.querySelector('.feat-book').addEventListener('click', e => { if (it.dataset.pos !== '0') { e.preventDefault(); show(i); } }));
+    feat.addEventListener('pointerenter', e => { if (e.pointerType !== 'touch') hold(); });
+    feat.addEventListener('pointerleave', () => { release(); feat.style.setProperty('--tilt-x', '0deg'); feat.style.setProperty('--tilt-y', '0deg'); });
     feat.addEventListener('pointermove', e => {
       if (motionOff()) return; const r = feat.getBoundingClientRect();
       feat.style.setProperty('--tilt-x', ((e.clientX - r.left) / r.width - .5) * 50 + 'deg');
       feat.style.setProperty('--tilt-y', -((e.clientY - r.top) / r.height - .5) * 22 + 'deg');
     });
-    feat.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { show(cur + 1); auto(); } if (e.key === 'ArrowLeft') { show(cur - 1); auto(); } });
-    show(0); auto();
+    feat.addEventListener('keydown', e => { if (e.key === 'ArrowRight') show(cur + 1); if (e.key === 'ArrowLeft') show(cur - 1); });
+    // resuming background motion restarts the clock (and the dot's progress bar)
+    new MutationObserver(() => { if (!motionOff()) { dots.forEach(d => d.setAttribute('aria-current', 'false')); void feat.offsetWidth; dots[cur] && dots[cur].setAttribute('aria-current', 'true'); arm(); } })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['data-scene-motion'] });
+    const start = Number(new URLSearchParams(location.search).get('feature')) || 1; // ?feature=3 opens on the third book (handy for previews)
+    show(clamp(start, 1, n) - 1, true);
   }
 
   // ---- the library ring
