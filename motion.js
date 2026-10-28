@@ -385,8 +385,10 @@ void main(){
       this.grade = { gain: ok3(g[0]) ? g[0] : [1, 1, 1], lift: ok3(g[1]) ? g[1] : [0, 0, 0], sat: g[2] && isFinite(g[2][0]) ? g[2][0] : 1 };
       // hero worlds that are not on screen stay asleep until needed
       this.active = !this.world || node.classList.contains('world-on'); this.dormant = !this.active; this.started = false;
-      // The still photograph is already on screen. Start the moving layer once the browser has a spare moment.
-      if (this.active) (window.requestIdleCallback || (fn => setTimeout(fn, 400)))(() => this.ensure(), { timeout: 1200 });
+      // Below-fold scenes keep their box, but the photograph waits until the section is near.
+      if (!this.hero) node.classList.add('scene-defer');
+      // The hero still is already on screen. Start its moving layer once the browser has a spare moment.
+      if (this.active && this.hero) (window.requestIdleCallback || (fn => setTimeout(fn, 400)))(() => this.ensure(), { timeout: 1200 });
       new ResizeObserver(() => this.size()).observe(node);
     }
     ensure() { if (!this.started) { this.started = true; this.size(); this.booting = this.setup(); } return this.booting; }
@@ -720,7 +722,7 @@ void main(){
   }
   const queue = () => { if (!sf) sf = requestAnimationFrame(onScroll); };
   addEventListener('scroll', queue, { passive: true }); addEventListener('resize', queue, { passive: true });
-  const io = new IntersectionObserver(es => { es.forEach(e => { const s = scenes.find(x => x.node === e.target); if (s) s.visible = e.isIntersecting; }); start(); }, { rootMargin: '80px' });
+  const io = new IntersectionObserver(es => { es.forEach(e => { const s = scenes.find(x => x.node === e.target); if (!s) return; s.visible = e.isIntersecting; if (e.isIntersecting) { s.node.classList.remove('scene-defer'); if (s.active) s.ensure(); } }); start(); }, { rootMargin: '80px' });
   scenes.forEach(s => io.observe(s.node));
 
   // ---- hero worlds: one scene per featured book, swapped by the featured carousel
@@ -748,7 +750,7 @@ void main(){
   }
   if (worlds.length) {
     document.addEventListener('montagna:feature', e => setWorld(e.detail && e.detail.slug, e.detail || {}));
-    setTimeout(preload, 2500);
+    (window.requestIdleCallback || (fn => setTimeout(fn, 7000)))(preload, { timeout: 7000 });
   }
 
   function loop(now) {

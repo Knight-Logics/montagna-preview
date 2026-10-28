@@ -174,6 +174,8 @@ html[data-scene-motion=paused] .b3d-hero,html[data-scene-motion=paused] .b3d-she
 @property --wr{syntax:'<percentage>';inherits:true;initial-value:165%}
 .hero[data-worlds]{transition:--accent 1.4s ease}
 .hero[data-worlds]>.living-scene{visibility:hidden;z-index:-4}
+.hero[data-worlds]>.living-scene:not(.world-on) .scene-still{background-image:none}
+.living-scene.scene-defer .scene-still{background-image:none}
 .hero[data-worlds]>.living-scene.world-on{visibility:visible}
 .hero[data-worlds]>.living-scene.world-in{z-index:-3;-webkit-mask-image:radial-gradient(circle at var(--wx,66%) var(--wy,40%),#000 calc(var(--wr) - 11%),transparent var(--wr));mask-image:radial-gradient(circle at var(--wx,66%) var(--wy,40%),#000 calc(var(--wr) - 11%),transparent var(--wr));animation:worldIn 1.8s cubic-bezier(.62,0,.22,1) both}
 .hero[data-worlds]>.living-scene.world-in:after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(circle at var(--wx,66%) var(--wy,40%),transparent calc(var(--wr) - 16%),color-mix(in srgb,var(--accent) 38%,transparent) calc(var(--wr) - 3%),transparent var(--wr));mix-blend-mode:screen}
