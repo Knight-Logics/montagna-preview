@@ -93,10 +93,16 @@
 .ring-section{position:relative;overflow:hidden;isolation:isolate;padding:90px 0 80px;color:var(--paper);background:radial-gradient(ellipse 80% 60% at 50% 42%,#1b4441 0%,#0d2726 45%,#061413 100%)}
 .ring-aurora{position:absolute;inset:-30% -10% auto;height:120%;z-index:-1;background:conic-gradient(from 200deg at 50% 50%,#d9bb8000,#d9bb8022,#2b6b6022,#d9bb8000 60%);filter:blur(60px);animation:aurora 22s linear infinite;opacity:.9}
 @keyframes aurora{to{transform:rotate(360deg)}}
-/* Same shelf on a slow computer: the wash stays put, and only the book facing you keeps the moving gloss. */
+/* The gloss sweep stays on the book facing you. A highlight on every copy is what stalls an old machine. */
+.b3d-sheen{animation:none}
+.feat-item[data-pos="0"] .b3d-sheen,
+.ring-item.front .b3d-sheen{animation:b3dSheen 7s ease-in-out infinite}
+/* Below the opening screen, skip layout and paint until the section is near. The picture is unchanged once it is on screen. */
+.saga-worlds,.ring-section,.premiere,.author-preview,.discovery-paths{content-visibility:auto;contain-intrinsic-size:auto 880px}
+.saga-worlds{contain-intrinsic-size:auto 1500px}
+.ring-section{contain-intrinsic-size:auto 1040px}
+/* Same shelf on a slow computer: the wash stays put. */
 html.modest-motion .ring-aurora{animation:none}
-html.modest-motion .ring-item:not(.front) .b3d-sheen,
-html.modest-motion .feat-item:not([data-pos="0"]) .b3d-sheen{animation:none}
 html.modest-type .js .hero h1 .word{filter:none;animation-name:wordInLite}
 @keyframes wordInLite{to{opacity:1;transform:none}}
 .ring-head{text-align:center;max-width:720px;margin:0 auto;padding:0 6vw;position:relative;z-index:2}

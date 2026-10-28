@@ -385,7 +385,8 @@ void main(){
       this.grade = { gain: ok3(g[0]) ? g[0] : [1, 1, 1], lift: ok3(g[1]) ? g[1] : [0, 0, 0], sat: g[2] && isFinite(g[2][0]) ? g[2][0] : 1 };
       // hero worlds that are not on screen stay asleep until needed
       this.active = !this.world || node.classList.contains('world-on'); this.dormant = !this.active; this.started = false;
-      if (this.active) this.ensure();
+      // The still photograph is already on screen. Start the moving layer once the browser has a spare moment.
+      if (this.active) (window.requestIdleCallback || (fn => setTimeout(fn, 400)))(() => this.ensure(), { timeout: 1200 });
       new ResizeObserver(() => this.size()).observe(node);
     }
     ensure() { if (!this.started) { this.started = true; this.size(); this.booting = this.setup(); } return this.booting; }
@@ -583,7 +584,7 @@ void main(){
       const cap = manual ? 1 : this.hero ? (innerWidth < 700 ? 1.25 : 1.6) : (innerWidth < 700 ? 1 : 1.25);
       const dens = this.mode === '2d' ? Math.min(1, 1280 / this.w, 820 / this.h) : Math.min(devicePixelRatio || 1, cap) * this.quality;
       this.canvas.width = Math.round(this.w * dens); this.canvas.height = Math.round(this.h * dens);
-      const ld = Math.min(devicePixelRatio || 1, 2);
+      const ld = 1;
       this.life.width = Math.round(this.w * ld); this.life.height = Math.round(this.h * ld); this.ld = ld;
       if (this.ready) this.draw();
     }
@@ -757,14 +758,15 @@ void main(){
     for (const s of scenes) if (s.visible && s.active) {
       s.time += dt; s.step(dt);
       const modest = document.documentElement.classList.contains('modest-motion');
-      if (modest && s.quality > .66 && s.mode !== '2d') { s.quality = .66; s.slow = 0; s.size(); }
-      // hero runs at full rate; a slow machine, and every secondary scene, stays near 30fps
-      const budget = (s.hero && s.mode !== '2d' && !modest) ? 0 : 32;
+      if (modest && s.quality > .66 && s.mode !== '2d') { s.quality = .66; s.size(); }
+      // Full rate only while a frame is cheap. The first expensive frame steps the picture down and paints at 30fps.
+      const eased = modest || s.quality < .95;
+      const budget = (s.hero && s.mode !== '2d' && !eased) ? 0 : 32;
       if (!s.lastPaint || now - s.lastPaint >= budget) {
         const t0 = performance.now(); s.draw(); s.lastPaint = now;
-        // adaptive quality: if a frame keeps costing too much, drop internal resolution once
-        const cost = performance.now() - t0; s.slow = cost > 22 ? s.slow + 1 : Math.max(0, s.slow - 1);
-        if (s.slow > 20 && s.quality > .6 && s.mode !== '2d') { s.quality = .66; s.slow = 0; s.size(); }
+        const cost = performance.now() - t0;
+        if (cost > 22 && s.mode !== '2d' && s.quality > .5) { s.quality = Math.max(.5, Math.round(s.quality * 66) / 100); s.size(); }
+        else if (cost < 8 && !modest && s.mode !== '2d' && s.quality < 1) { s.quality = Math.min(1, Math.round((s.quality + .15) * 100) / 100); s.size(); }
       }
     }
     if (scenes.some(s => s.visible && s.active)) raf = requestAnimationFrame(loop); else last = 0;
