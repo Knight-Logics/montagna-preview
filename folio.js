@@ -6,6 +6,10 @@
   const theatre = root.querySelector('.folio-theatre');
   const native = root.querySelector('[data-folio-native]');
   const text = document.querySelector('.portfolio-reader');
+  if (!text) {
+    const textButton = root.querySelector('[data-folio-mode="text"]');
+    if (textButton) textButton.hidden = true;
+  }
   const prev = root.querySelector('[data-folio-prev]');
   const next = root.querySelector('[data-folio-next]');
   const status = root.querySelector('.folio-page-status');
