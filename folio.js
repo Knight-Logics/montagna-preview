@@ -66,6 +66,8 @@
     const right = Math.min(left + (landscape ? 1 : 0), total - 1);
     const spread = right > left;
     status.textContent = (spread ? 'Pages ' + (left + 1) + '–' + (right + 1) : 'Page ' + (left + 1)) + ' of ' + total;
+    const imgs = host.querySelectorAll('img');
+    for (let i = left; i < Math.min(imgs.length, right + 3); i++) if (imgs[i].loading === 'lazy') imgs[i].loading = 'eager';
     prev.disabled = left === 0;
     next.disabled = right >= total - 1;
     root.querySelector('.folio-progress span').style.width = ((page + 1) / total * 100) + '%';

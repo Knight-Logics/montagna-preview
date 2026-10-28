@@ -17,6 +17,7 @@
  */
 (() => {
   'use strict';
+  if ((navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4) document.documentElement.classList.add('modest-motion');
   const nodes = [...document.querySelectorAll('[data-living-scene]')];
   if (!nodes.length) return;
   let explicit = null; try { explicit = localStorage.getItem('montagna-motion'); } catch {}
@@ -374,6 +375,7 @@ void main(){
       this.node = node; this.kind = node.dataset.livingScene; this.hero = node.hasAttribute('data-hero');
       this.canvas = node.querySelector('.scene-surface'); this.life = node.querySelector('.scene-life'); this.ctx = this.life.getContext('2d');
       this.time = Math.random() * 20; this.visible = false; this.ready = false; this.frames = 0; this.quality = Number(node.dataset.quality || 1); this.slow = 0;
+      if (document.documentElement.classList.contains('modest-motion')) this.quality = Math.min(this.quality, .66);
       this.subject = pair(node.dataset.subject, .5, .5); this.subjectX = pair(node.dataset.subjectScreen, .5, .5);
       this.sun = pair(node.dataset.sun, .7, .3);
       this.mobileZoom = Number(node.dataset.mobileZoom || 1); this.mobileY = Number(node.dataset.mobileY || 0);
@@ -754,8 +756,11 @@ void main(){
     const dt = last ? Math.min((now - last) / 1000, .08) : 0; last = now;
     for (const s of scenes) if (s.visible && s.active) {
       s.time += dt; s.step(dt);
-      // hero runs at full rate; secondary scenes at ~30fps
-      if ((s.hero && s.mode !== '2d') || !s.lastPaint || now - s.lastPaint >= 32) {
+      const modest = document.documentElement.classList.contains('modest-motion');
+      if (modest && s.quality > .66 && s.mode !== '2d') { s.quality = .66; s.slow = 0; s.size(); }
+      // hero runs at full rate; a slow machine, and every secondary scene, stays near 30fps
+      const budget = (s.hero && s.mode !== '2d' && !modest) ? 0 : 32;
+      if (!s.lastPaint || now - s.lastPaint >= budget) {
         const t0 = performance.now(); s.draw(); s.lastPaint = now;
         // adaptive quality: if a frame keeps costing too much, drop internal resolution once
         const cost = performance.now() - t0; s.slow = cost > 22 ? s.slow + 1 : Math.max(0, s.slow - 1);

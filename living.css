@@ -229,7 +229,7 @@ html:has(body.folio-page){scroll-padding-top:15px}
   .saga-copy>.eyebrow{font-size:clamp(12px,.8vw,14px)}
   .hero-side,.hero-bottom,.genre-strip{font-size:clamp(11px,.75vw,13px)}
 }
-.library-essay{padding:72px 8vw 96px}
+.library-essay{padding:72px 8vw 96px;content-visibility:auto;contain-intrinsic-size:auto 980px}
 .library-essay .prose{max-width:740px}
 .library-essay .prose h2{font-size:clamp(36px,4vw,58px);margin:10px 0 22px}
 .library-essay .prose h3{font-size:28px;margin:32px 0 12px}

@@ -5,6 +5,8 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const motionOff = () => document.documentElement.dataset.sceneMotion === 'paused';
   const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+  // A 12-year-old machine is often 4 cores or 4 GB. Mark it before the headline animation starts.
+  if ((navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4) document.documentElement.classList.add('modest-motion', 'modest-type');
 
   // ---- headline: wrap each word so it can condense out of the mist
   const h1 = document.querySelector('.hero h1');
@@ -93,16 +95,25 @@
   if (stage) {
     const ring = stage.querySelector('.ring'), items = [...ring.children], n = items.length, step = 360 / n;
     const cap = { title: document.querySelector('[data-ring-title]'), group: document.querySelector('[data-ring-group]'), tag: document.querySelector('[data-ring-tagline]'), link: document.querySelector('[data-ring-link]') };
-    let angle = 0, vel = 0, target = null, drag = null, visible = false, raf = 0, last = 0, front = -1, idleUntil = 0;
+    let angle = 0, vel = 0, target = null, drag = null, visible = false, raf = 0, last = 0, front = -1, idleUntil = 0, slowFrames = 0;
+    const dims = new Array(n), zs = new Array(n);
     const frontIndex = () => ((Math.round(-angle / step) % n) + n) % n;
     const paint = () => {
-      ring.style.setProperty('--angle', angle + 'deg');
-      items.forEach((it, i) => {
-        let d = ((i * step + angle) % 360 + 540) % 360 - 180; // -180..180, 0 = facing viewer
-        const f = Math.cos(d * Math.PI / 180);
-        it.style.setProperty('--dim', (.65 * (1 - Math.max(0, f))).toFixed(3));
-        it.style.zIndex = String(Math.round(f * 100) + 100);
-      });
+      ring.style.setProperty('--angle', angle.toFixed(2) + 'deg');
+      // Shade and stacking only when the shelf has turned enough to matter.
+      // Rewriting all 21 books every frame is what makes the spin stutter.
+      const bucket = (angle * 2) | 0;
+      if (paint.bucket !== bucket) {
+        paint.bucket = bucket;
+        items.forEach((it, i) => {
+          let d = ((i * step + angle) % 360 + 540) % 360 - 180; // -180..180, 0 = facing viewer
+          const f = Math.cos(d * Math.PI / 180);
+          const dim = (.65 * (1 - Math.max(0, f))).toFixed(2);
+          if (dims[i] !== dim) { dims[i] = dim; it.style.setProperty('--dim', dim); }
+          const z = String(Math.round(f * 100) + 100);
+          if (zs[i] !== z) { zs[i] = z; it.style.zIndex = z; }
+        });
+      }
       const k = frontIndex();
       if (k !== front) {
         front = k; items.forEach((it, i) => it.classList.toggle('front', i === k));
@@ -111,7 +122,17 @@
     };
     const goTo = i => { let want = -i * step; while (want - angle > 180) want -= 360; while (want - angle < -180) want += 360; target = want; idleUntil = performance.now() + 9000; kick(); };
     const tick = t => {
-      raf = 0; const dt = last ? Math.min(.05, (t - last) / 1000) : 0; last = t;
+      raf = 0;
+      // A hidden tab reports one-second frames. That is the browser, not a slow computer.
+      if (document.hidden) { last = 0; slowFrames = 0; return; }
+      const frameMs = last ? t - last : 0;
+      if (frameMs > 50) slowFrames++; else slowFrames = Math.max(0, slowFrames - 1);
+      if (slowFrames > 15) document.documentElement.classList.add('modest-motion');
+      // On a machine that is already behind, paint the shelf at an even 30fps. Speed still follows the clock.
+      if (document.documentElement.classList.contains('modest-motion') && visible && frameMs && frameMs < 32 && !drag && target === null && Math.abs(vel) < .5) {
+        raf = requestAnimationFrame(tick); return;
+      }
+      const dt = frameMs ? Math.min(.05, frameMs / 1000) : 0; last = t;
       if (drag) { /* position set by pointer */ }
       else if (target !== null) { angle += (target - angle) * Math.min(1, dt * 5); if (Math.abs(target - angle) < .05) { angle = target; target = null; } }
       else if (Math.abs(vel) > .5) { angle += vel * dt; vel *= Math.pow(.05, dt); if (Math.abs(vel) <= .5) { goTo(frontIndex()); } }
@@ -119,7 +140,8 @@
       paint();
       if (visible && (!motionOff() || drag || target !== null || Math.abs(vel) > .5)) raf = requestAnimationFrame(tick); else last = 0;
     };
-    const kick = () => { if (!raf) raf = requestAnimationFrame(tick); };
+    const kick = () => { if (!raf && !document.hidden) raf = requestAnimationFrame(tick); };
+    document.addEventListener('visibilitychange', () => { if (!document.hidden && visible) kick(); });
     new IntersectionObserver(es => { visible = es[0].isIntersecting; if (visible) kick(); }).observe(stage);
     let moved = 0, pressHref = null;
     stage.addEventListener('pointerdown', e => {
