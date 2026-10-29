@@ -1,2 +1,4 @@
+# Pre-launch build: nothing here should be indexed yet.
+# At launch, set INDEXABLE = True in scripts/seo.py and rebuild.
 User-agent: *
 Disallow: /

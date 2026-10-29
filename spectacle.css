@@ -21,9 +21,11 @@
 .b3d-bt{transform:rotateX(-90deg) translateZ(calc(var(--h)/2 - 1px))}
 
 /* ---------- headline: words arrive out of the mist (from the .si builds) ---------- */
-.js .hero h1 .word{display:inline-block;opacity:0;filter:blur(16px);transform:translateY(.32em) rotateX(-55deg);transform-origin:50% 100%;animation:wordIn 1.25s cubic-bezier(.16,.8,.2,1) forwards;animation-delay:calc(var(--wi)*95ms + .25s)}
+/* The spans are in the HTML (build), so this runs from the first paint without waiting for JavaScript.
+   Words start as a faint mist (opacity .12) rather than invisible, so the headline is painted at once. */
+.hero h1 .word{display:inline-block;opacity:.12;filter:blur(16px);transform:translateY(.32em) rotateX(-55deg);transform-origin:50% 100%;animation:wordIn 1.25s cubic-bezier(.16,.8,.2,1) forwards;animation-delay:calc(var(--wi)*95ms + .25s)}
 @keyframes wordIn{to{opacity:1;filter:blur(0);transform:none}}
-.js .hero h1.hero-in{animation:none;opacity:1;transform:none}
+.hero h1.hero-in{animation:none;opacity:1;transform:none}
 .hero h1 em .word{padding-right:.06em}
 .hero [data-hero-copy]{transform:none;opacity:1}
 .hero .hero-shade{background:linear-gradient(90deg,#03171acc 0%,#04191b80 30%,transparent 58%),linear-gradient(0deg,#051a1caa,transparent 40%)}
@@ -103,7 +105,7 @@
 .ring-section{contain-intrinsic-size:auto 1040px}
 /* Same shelf on a slow computer: the wash stays put. */
 html.modest-motion .ring-aurora{animation:none}
-html.modest-type .js .hero h1 .word{filter:none;animation-name:wordInLite}
+html.modest-type .hero h1 .word{filter:none;animation-name:wordInLite}
 @keyframes wordInLite{to{opacity:1;transform:none}}
 .ring-head{text-align:center;max-width:720px;margin:0 auto;padding:0 6vw;position:relative;z-index:2}
 .ring-head .eyebrow{color:var(--gold)}
@@ -162,7 +164,7 @@ dialog.film-dialog{border:0;padding:0;background:#000;width:min(1280px,94vw);max
 
 /* ---------- reduced motion / paused ---------- */
 @media(prefers-reduced-motion:reduce){
-  .js .hero h1 .word{animation:none;opacity:1;filter:none;transform:none}
+  .hero h1 .word{animation:none;opacity:1;filter:none;transform:none}
   .b3d-hero,.b3d-sheen,.feat-glow,.ring-aurora,.premiere-play{animation:none}
   .hero-featured{animation:none}
 }
@@ -203,3 +205,27 @@ html[data-scene-motion=paused] .feat-dot[aria-current=true]:after{animation:none
 @media(max-width:900px){.world-place i{display:none}.world-place b{min-width:0}}
 @media(max-width:600px){.world-place{display:none}}
 .hero[data-worlds] .feat-head{text-shadow:0 0 6px #000,0 0 16px #000c}
+
+/* ---------- PageSpeed + accessibility pass (Claude, 2026-10-28) ----------
+   1. Decorative loops hold their first frame until html.motion-live (app.js: first interaction or idle after load).
+   2. Contrast and target-size fixes found by axe; colours are the same hue, only darkened to reach 4.5:1. */
+html:not(.motion-live) .b3d-sheen,html:not(.motion-live) .b3d-hero,html:not(.motion-live) .feat-glow,
+html:not(.motion-live) .feat-item[data-pos="0"]:before,html:not(.motion-live) .ring-aurora,html:not(.motion-live) .premiere-play,
+html:not(.motion-live) .hero-catalog-covers a,html:not(.motion-live) .intro-book-art img,
+html:not(.motion-live) .feat-dot[aria-current=true]:after{animation-play-state:paused}
+.library-essay{content-visibility:visible;contain-intrinsic-size:none}
+/* low-contrast text colours were darkened in place (same hue) — see research/CLAUDE-HANDOFF-2026-10-28-pagespeed-seo.md */
+/* footer links: 24px tall targets, same text position and spacing as before */
+.footer-navigation a{display:inline-flex;align-items:center;min-height:24px;margin-block:min(0px,calc((1.7em - 24px)/2))}
+.footer-navigation .footer-guide{margin-top:calc(8px + min(0px,calc((1.7em - 24px)/2)))}
+.footer-identity .text-link{min-height:24px}
+/* flipbook pages: the page-turn reader replaces the text edition on start; hide it from the first paint so nothing
+   below jumps (html.folio-js comes from the inline head script; text mode or a reader failure shows it again) */
+html.folio-js body:not(:has([data-folio][data-mode="text"])) .portfolio-reader{display:none}
+/* until the page-turn reader starts, only its first page is laid out, so the browser does not fetch every lazy page image */
+[data-folio]:not([data-reader-starting]) .folio-book-host>.folio-leaf+.folio-leaf{display:none}
+/* screening room: YouTube loads only when a trailer is played (a facade with the same thumbnail and play button) */
+.yt-facade{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;z-index:3;background:#04120f center/cover no-repeat;cursor:pointer}
+.yt-facade-play{position:absolute;left:50%;top:50%;width:68px;height:48px;translate:-50% -50%;border-radius:14px;background:#212121e6;transition:background .2s}
+.yt-facade-play:after{content:'';position:absolute;left:27px;top:14px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}
+.yt-facade:hover .yt-facade-play,.yt-facade:focus-visible .yt-facade-play{background:#f00}

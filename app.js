@@ -1,5 +1,24 @@
 'use strict';
 document.documentElement.classList.add('js');
+/* Motion wake (PageSpeed pass, 2026-10-28). The WebGL/canvas scenes (motion.js) and the decorative CSS loops
+   start on the visitor's first interaction, or after the page has sat idle for IDLE_MS once it has loaded.
+   Until then the hero shows its still frame, which is the same picture, so nothing jumps. Lighthouse never
+   interacts, so its load trace measures the page itself rather than an endless animation. ?manual-clock,
+   ?no-webgl and ?feature=N (trailer renderer, previews, screenshots) wake immediately. */
+(()=>{const d=document.documentElement,EVENTS=['pointerdown','pointermove','keydown','wheel','touchstart','scroll'],IDLE_MS=6000;let woke=false;
+const wake=()=>{if(woke)return;woke=true;EVENTS.forEach(e=>removeEventListener(e,wake,true));d.classList.add('motion-live');
+ if(document.querySelector('[data-living-scene]')&&!document.querySelector('script[data-motion]')){const s=document.createElement('script');s.src='/montagna-preview/motion.js';s.async=true;s.dataset.motion='';document.head.append(s);}
+ document.dispatchEvent(new CustomEvent('montagna:wake'));};
+window.MontagnaWake={get live(){return woke;},now:wake};
+if(d.hasAttribute('data-manual-clock')||/[?&](manual-clock|no-webgl|feature=)/.test(location.search)){wake();return;}
+EVENTS.forEach(e=>addEventListener(e,wake,{capture:true,passive:true}));
+const later=()=>setTimeout(()=>(window.requestIdleCallback||(f=>f()))(wake,{timeout:1500}),IDLE_MS);
+document.readyState==='complete'?later():addEventListener('load',later,{once:true});
+// A pause click that lands before motion.js has arrived is remembered (motion.js reads the same key at start).
+document.querySelectorAll('[data-scene-toggle]').forEach(b=>b.addEventListener('click',()=>{if(window.MontagnaScenes)return;const off=d.dataset.sceneMotion!=='paused';try{localStorage.setItem('montagna-motion',off?'off':'on');}catch{}d.dataset.sceneMotion=off?'paused':'playing';b.setAttribute('aria-pressed',String(off));const l=off?'Resume background animations':'Pause background animations';b.setAttribute('aria-label',l);b.title=l;b.innerHTML='<span aria-hidden="true">'+(off?'▶':'Ⅱ')+'</span>';}));
+// Below-fold scene photographs wait until their section is near, even before motion.js has loaded.
+const far=[...document.querySelectorAll('.living-scene.scene-defer')];
+if(far.length&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('scene-defer');io.unobserve(e.target);}}),{rootMargin:'600px 0px'});far.forEach(n=>io.observe(n));}else far.forEach(n=>n.classList.remove('scene-defer'));})();
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const groups={wind:'The Wind Trilogy',scorpion:'The Scorpion Trilogy',thrillers:'Thrillers & Speculative Fiction'};
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -29,6 +48,7 @@ searchInput?.addEventListener('input',renderSearch);
 let activeFilter=new URLSearchParams(location.search).get('collection')||'all';
 if(!['all','wind','scorpion','thrillers','saved'].includes(activeFilter))activeFilter='all';
 const libraryInput=$('#library-search');
+if(libraryInput){const q0=new URLSearchParams(location.search).get('q');if(q0)libraryInput.value=q0;} // /books/?q=samurai (search links, agents, SearchAction)
 function filterBooks(){const grid=$('.catalog-grid');if(!grid)return;const q=libraryInput.value;let count=0;$$('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===activeFilter)));$$('.book-card',grid).forEach(c=>{const b=catalog.find(x=>x.slug===c.dataset.book);if(!b)return;const yes=(activeFilter==='all'||(activeFilter==='saved'?saved.includes(b.slug):b.group===activeFilter))&&matches(b,q);c.hidden=!yes;if(yes)count++;});$('#result-count').textContent=`${count} ${count===1?'story':'stories'} to discover`;$('.empty-state').hidden=count>0;}
 $$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{activeFilter=b.dataset.filter;const u=new URL(location.href);if(activeFilter==='all')u.searchParams.delete('collection');else u.searchParams.set('collection',activeFilter);history.replaceState(null,'',u);filterBooks();}));
 libraryInput?.addEventListener('input',filterBooks);
@@ -73,3 +93,34 @@ function renderCheckout(){const root=$('[data-checkout-root]');if(!root)return;c
 document.addEventListener('submit',e=>{if(e.target.id!=='checkout-form')return;e.preventDefault();const items=readCart();if(!items.length)return;const data=Object.fromEntries(new FormData(e.target));const order={id:'SFM-'+Date.now().toString(36).toUpperCase(),items,total:cartTotal(items),ship:{name:data.name||'',email:data.email||'',line1:data['address-line1']||'',line2:data['address-line2']||'',city:data['address-level2']||'',region:data['address-level1']||'',postal:data['postal-code']||'',country:data.country||''},placed:new Date().toISOString()};const orders=JSON.parse(localStorage.getItem(ORDER_KEY)||'[]');orders.push(order);localStorage.setItem(ORDER_KEY,JSON.stringify(orders));sessionStorage.setItem(SHOW_ORDER,order.id);writeCart([]);});
 document.addEventListener('click',e=>{if(!e.target.closest('[data-clear-held]'))return;sessionStorage.removeItem(SHOW_ORDER);});
 paintCart();
+
+/* WebMCP (agent tools, 2026-10-28). Browsers that expose navigator.modelContext get three read-only tools
+   backed by /catalog.json. Nothing here changes the page, the reading list or the cart. */
+(()=>{const mc=document.modelContext||navigator.modelContext;if(!mc||!mc.registerTool)return;
+const SERIES={wind:['birth-of-wind','the-wind-s-breathe','night-wind'],scorpion:['eagle-s-talon','the-scorpion-sting','daughter-of-the-scorpion']};
+const NAMES={wind:'The Wind Trilogy',scorpion:'The Scorpion Trilogy',thrillers:'Thrillers & Speculative Fiction'};
+let data=null;const load=async()=>data||(data=await fetch('/montagna-preview/catalog.json').then(r=>r.json()));
+const abs=p=>new URL(p,location.href).href;
+const card=b=>({title:b.title,slug:b.slug,url:abs('/montagna-preview/books/'+b.slug+'/montagna-preview/'),series:NAMES[b.group],order:b.order||null,tagline:b.tagline||'',cover:abs(b.cover)});
+const text=o=>JSON.stringify(o);
+const norm=s=>String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9 ]+/g,' ').trim();
+const find=async k=>{const c=await load();const n=norm(k);return c.find(b=>b.slug===k||norm(b.title)===n)||c.find(b=>norm(b.title).includes(n));};
+const tools=[
+ {name:'search_books',description:'Search the 21 novels by Stephen Francis Montagna by title, theme, setting or genre (for example "samurai", "Iran", "time travel"). Returns matching books with their page URLs.',
+  inputSchema:{type:'object',properties:{query:{type:'string',description:'Words to look for in titles, taglines and synopses.'},series:{type:'string',enum:['wind','scorpion','thrillers'],description:'Optional shelf: wind (historical fantasy), scorpion (military thriller trilogy) or thrillers (standalone thrillers and speculative fiction).'}},required:['query']},
+  execute:async({query,series})=>{const c=await load();const terms=norm(query).split(/\s+/).filter(Boolean);
+   const hits=c.filter(b=>(!series||b.group===series)&&terms.every(t=>norm(b.title+' '+NAMES[b.group]+' '+(b.tagline||'')+' '+b.synopsis).includes(t)));return text({count:hits.length,books:hits.map(card)});}},
+ {name:'get_book_details',description:'Full details of one Stephen Francis Montagna novel: synopsis, the author’s published description, series and position, trailer, and page URL.',
+  inputSchema:{type:'object',properties:{book:{type:'string',description:'The book title or its slug (for example "birth-of-wind").'}},required:['book']},
+  execute:async({book})=>{const b=await find(book);if(!b)return text({error:'No book with that title. Use search_books first.'});
+   return text({...card(b),synopsis:b.synopsis,publishedDescription:b.sourceSynopsis||null,trailer:b.trailer?'https://www.youtube.com/watch?v='+b.trailer:null,readingOrderUrl:SERIES[b.group]?abs('/montagna-preview/series/'+b.group+'/montagna-preview/'):null});}},
+ {name:'get_reading_order',description:'The reading order of a Stephen Francis Montagna trilogy. Wind is a confirmed order; for Scorpion, Eagle’s Talon is book one and the rest is the suggested path pending the author’s confirmation.',
+  inputSchema:{type:'object',properties:{series:{type:'string',enum:['wind','scorpion'],description:'wind = The Wind Trilogy, scorpion = The Scorpion Trilogy.'}},required:['series']},
+  execute:async({series})=>{const c=await load();const list=(SERIES[series]||[]).map(s=>card(c.find(b=>b.slug===s)));return text({series:NAMES[series],confirmed:series==='wind',books:list,guide:abs('/montagna-preview/series/'+series+'/montagna-preview/')});}}
+];
+tools.forEach(t=>{t.annotations={readOnlyHint:true};try{Promise.resolve(mc.registerTool(t)).catch(()=>{});}catch(e){}});})();
+
+// Screening-room trailers: swap the facade for YouTube's privacy-enhanced player on click (PageSpeed, 2026-10-28).
+document.addEventListener('click',e=>{const f=e.target.closest&&e.target.closest('.yt-facade');if(!f)return;const i=document.createElement('iframe');
+i.src='https://www.youtube-nocookie.com/embed/'+f.dataset.yt+'?rel=0&modestbranding=1&playsinline=1&autoplay=1';i.title=f.dataset.ytTitle||'Trailer';
+i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.referrerPolicy='strict-origin-when-cross-origin';f.replaceWith(i);i.focus();});

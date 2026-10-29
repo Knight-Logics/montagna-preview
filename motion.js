@@ -386,7 +386,7 @@ void main(){
       // hero worlds that are not on screen stay asleep until needed
       this.active = !this.world || node.classList.contains('world-on'); this.dormant = !this.active; this.started = false;
       // Below-fold scenes keep their box, but the photograph waits until the section is near.
-      if (!this.hero) node.classList.add('scene-defer');
+      // (Below-fold scenes now arrive with .scene-defer from the build; app.js lifts it as they approach.)
       // The hero still is already on screen. Start its moving layer once the browser has a spare moment.
       if (this.active && this.hero) (window.requestIdleCallback || (fn => setTimeout(fn, 400)))(() => this.ensure(), { timeout: 1200 });
       new ResizeObserver(() => this.size()).observe(node);

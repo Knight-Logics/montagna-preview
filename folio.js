@@ -76,6 +76,7 @@
 
   function initialize() {
     if (book || !window.St?.PageFlip) return;
+    root.dataset.readerStarting = 'true'; // lifts the pre-start rule that keeps pages 2+ (and their lazy images) out of layout
     try {
       fitStage();
       book = new St.PageFlip(host, pageSize());
@@ -92,6 +93,7 @@
       update();
     } catch {
       status.textContent = 'The text edition is available below.';
+      root.dataset.mode = 'text';
       native.hidden = true;
       if (text) text.hidden = false;
       root.querySelectorAll('[data-folio-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.folioMode === 'text')));
@@ -157,5 +159,10 @@
     resize = setTimeout(() => { if (mode === 'book') { fitStage(); book?.update(); } }, 90);
   }).observe(native);
   if (reduce.matches) setMode('text', false);
-  else initialize();
+  else if ('IntersectionObserver' in window && root.getBoundingClientRect().top > innerHeight + 700) {
+    // A reader far down the page (the novel pages) starts as it approaches the viewport, so the cover and intro
+    // photograph load first. A reader near the top (the portfolio pages) starts at once, before the first paint.
+    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); initialize(); } }, { rootMargin: '700px 0px' });
+    io.observe(root);
+  } else initialize();
 })();

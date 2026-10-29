@@ -1,0 +1,38 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:stephenfrancismontagna.com:library:montagna-library",
+      "displayName": "Stephen Francis Montagna library",
+      "type": "application/agent-skills+md",
+      "url": "https://knight-logics.github.io/montagna-preview/agent-skills/montagna-library/SKILL.md",
+      "description": "Agent skill for finding and recommending the 21 novels of Stephen Francis Montagna: series reading order, genres, ISBN-13 editions, trailers and flipbooks, sourced from the author’s website catalog.",
+      "representativeQueries": [
+        "What order should I read the Wind Trilogy by Stephen Francis Montagna?",
+        "Recommend a military thriller by Stephen Francis Montagna",
+        "Which Stephen Francis Montagna books feature Robert Walker?",
+        "What is the ISBN of Birth of Wind paperback?",
+        "Is there a female samurai historical fantasy series by Stephen Montagna?"
+      ],
+      "capabilities": [
+        "search_books",
+        "get_book_details",
+        "get_reading_order"
+      ],
+      "tags": [
+        "books",
+        "author",
+        "military thriller",
+        "historical fantasy",
+        "reading order",
+        "ISBN"
+      ],
+      "version": "2026-10-28",
+      "updatedAt": "2026-10-28T00:00:00Z",
+      "metadata": {
+        "llmsTxt": "https://knight-logics.github.io/montagna-preview/llms.txt",
+        "catalog": "https://knight-logics.github.io/montagna-preview/catalog.json",
+        "author": "Stephen Francis Montagna"
+      }
+    }
+  ]
+}

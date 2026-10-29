@@ -10,7 +10,9 @@
 
   // ---- headline: wrap each word so it can condense out of the mist
   const h1 = document.querySelector('.hero h1');
-  if (h1 && !reduce.matches) {
+  // The build now ships the headline already split into .word spans (no re-render after first paint);
+  // this fallback only runs for a page that was not rebuilt.
+  if (h1 && !reduce.matches && !h1.querySelector('.word')) {
     let i = 0;
     const walk = node => {
       [...node.childNodes].forEach(n => {
@@ -54,10 +56,13 @@
       if (place && it.dataset.place && place.textContent !== it.dataset.place) scramble(place, it.dataset.place);
       document.dispatchEvent(new CustomEvent('montagna:feature', { detail: { slug: it.dataset.slug, index: cur, instant: !!instant } }));
     };
+    // The carousel clock (and the dot's progress bar) starts with the rest of the motion: see the wake note in app.js.
+    const live = () => !window.MontagnaWake || window.MontagnaWake.live;
+    document.addEventListener('montagna:wake', () => { if (!hover) arm(); });
     const arm = (ms = DWELL) => { clearTimeout(tmr); left = ms; due = performance.now() + ms; tmr = setTimeout(tick, ms); };
     const tick = () => { if (hover || motionOff() || document.hidden) { arm(); return; } show(cur + 1); };
     const show = (k, instant) => {
-      const slot = feat.querySelector('.feat-item[data-pos="0"] .feat-book'), centre = slot && slot.getBoundingClientRect(); // where the front book sits
+      const slot = !instant && feat.querySelector('.feat-item[data-pos="0"] .feat-book'), centre = slot && slot.getBoundingClientRect(); // where the front book sits (not measured on the first, instant show)
       cur = (k + n) % n;
       items.forEach((it, i) => {
         let d = i - cur; if (d > n / 2) d -= n; if (d < -n / 2) d += n;
@@ -68,7 +73,7 @@
       if (now) now.textContent = String(cur + 1).padStart(2, '0');
       announce(centre, instant);
       window.MontagnaShop && window.MontagnaShop.syncFeatured(items[cur].dataset.slug);
-      if (hover) { clearTimeout(tmr); left = DWELL; } else arm();
+      if (hover) { clearTimeout(tmr); left = DWELL; } else if (live()) arm();
     };
     const hold = () => { if (hover) return; hover = true; clearTimeout(tmr); left = Math.max(500, due - performance.now()); feat.classList.add('held'); };
     const release = () => { if (!hover) return; hover = false; feat.classList.remove('held'); due = performance.now() + left; clearTimeout(tmr); tmr = setTimeout(tick, left); };
@@ -84,7 +89,7 @@
     });
     feat.addEventListener('keydown', e => { if (e.key === 'ArrowRight') show(cur + 1); if (e.key === 'ArrowLeft') show(cur - 1); });
     // resuming background motion restarts the clock (and the dot's progress bar)
-    new MutationObserver(() => { if (!motionOff()) { dots.forEach(d => d.setAttribute('aria-current', 'false')); void feat.offsetWidth; dots[cur] && dots[cur].setAttribute('aria-current', 'true'); arm(); } })
+    new MutationObserver(() => { if (!motionOff() && live()) { dots.forEach(d => d.setAttribute('aria-current', 'false')); void feat.offsetWidth; dots[cur] && dots[cur].setAttribute('aria-current', 'true'); arm(); } })
       .observe(document.documentElement, { attributes: true, attributeFilter: ['data-scene-motion'] });
     const start = Number(new URLSearchParams(location.search).get('feature')) || 1; // ?feature=3 opens on the third book (handy for previews)
     show(clamp(start, 1, n) - 1, true);
@@ -177,7 +182,7 @@
         [...s.children].forEach((v, i) => { const next = motionOff() ? '1' : clamp(p * 1.6 - i * .22, 0, 1).toFixed(3); if (v.dataset.rv !== next) { v.dataset.rv = next; v.style.setProperty('--rv', next); } });
       });
     };
-    addEventListener('scroll', () => { if (!q) q = requestAnimationFrame(update); }, { passive: true }); addEventListener('resize', update); update();
+    addEventListener('scroll', () => { if (!q) q = requestAnimationFrame(update); }, { passive: true }); addEventListener('resize', update); q = requestAnimationFrame(update);
   }
 
   // ---- local film player (the new trailer is a file on this site, not a third-party embed)

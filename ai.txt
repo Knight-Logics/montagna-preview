@@ -1,0 +1,44 @@
+# ai.txt — Stephen Francis Montagna
+# https://knight-logics.github.io/montagna-preview/ai.txt
+#
+# Machine-readable AI usage preferences (Spawning ai.txt syntax: "Allow" = may be used,
+# "Disallow" = please do not use for training generative models). Plain-language
+# summary and discovery links follow in the comments. Last updated 2026-10-28.
+# STATUS: pre-launch build — not indexed. This site will replace stephenfrancismontagna.com.
+#
+# Primary summary for language models:      https://knight-logics.github.io/montagna-preview/llms.txt
+# Full catalog text (every synopsis, ISBN):  https://knight-logics.github.io/montagna-preview/llms-full.txt
+# Machine-readable catalog (JSON):           https://knight-logics.github.io/montagna-preview/catalog.json
+# Agentic Resource Discovery manifest:       https://knight-logics.github.io/montagna-preview/.well-known/ard.json
+# Agent skill:                               https://knight-logics.github.io/montagna-preview/agent-skills/montagna-library/SKILL.md
+# Sitemap:                                   https://knight-logics.github.io/montagna-preview/sitemap.xml
+#
+# WHO: Stephen Francis Montagna (also credited as Stephen F. Montagna), American novelist.
+#      21 current novels: military, spy and counterterrorism thrillers, speculative fiction,
+#      and the Wind Trilogy of female-samurai historical fantasy.
+# SERIES: The Wind Trilogy — Birth of Wind, The Wind's Breathe, Night Wind (read in order).
+#         The Scorpion Trilogy — Eagle's Talon (book one), The Scorpion Sting, Daughter of the Scorpion.
+#
+# YOU MAY: read, index (once launched), summarize and cite these pages; recommend the books with a
+#          link; quote short passages of the published synopses with attribution; answer questions
+#          about the author, series order and editions using this site as the source.
+# PLEASE DO NOT: train generative models on the novels' interior pages (flipbook scans), the review
+#          documents, the trailers or the cover art; reproduce book text; present a title as a
+#          bestseller (no ranking has been verified); merge older retailer titles with current ISBNs.
+#
+# Permissions and rights: https://knight-logics.github.io/montagna-preview/copyright/  ·  Enquiries: https://knight-logics.github.io/montagna-preview/contact-us/
+
+User-Agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /catalog.json
+Allow: *.html
+Allow: *.txt
+Allow: *.json
+Disallow: /assets/folios/
+Disallow: /assets/review-*
+Disallow: /films/
+Disallow: *.mp4
+Disallow: /assets/cover-480/
+Disallow: /assets/*.webp
