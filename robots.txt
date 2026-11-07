@@ -1,0 +1,4 @@
+# Pre-launch build of the official Stephen Francis Montagna website: nothing here should be indexed yet.
+# At launch, set INDEXABLE = True in scripts/seo.py and rebuild.
+User-agent: *
+Disallow: /

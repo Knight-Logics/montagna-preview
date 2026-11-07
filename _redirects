@@ -1,0 +1,11 @@
+# Old routes from the previous site layout -> the page that now holds the content (Cloudflare Pages / Netlify)
+/the-author /about/ 301
+/the-author/ /about/ 301
+/trailers /films/ 301
+/trailers/ /films/ 301
+/contact /contact-us/ 301
+/contact/ /contact-us/ 301
+/cart /books/ 301
+/cart/ /books/ 301
+/checkout /books/ 301
+/checkout/ /books/ 301
