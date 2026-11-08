@@ -1,12 +1,12 @@
 # Privacy Policy | Stephen Francis Montagna
 
-> How the Stephen Francis Montagna website handles your reading list, enquiries, visitor statistics (Microsoft Clarity), trailers and IngramSpark links.
+> How the Stephen Francis Montagna website handles your reading list, enquiries, optional analytics (only if you allow them), trailers and IngramSpark links.
 
 Canonical: https://stephenfmontagnabooks.com/privacy/  
 Author: Stephen Francis Montagna  
 Updated: 2026-11-07
 
-How the Stephen Francis Montagna website handles your reading list, enquiries, visitor statistics (Microsoft Clarity), trailers and IngramSpark links.
+How the Stephen Francis Montagna website handles your reading list, enquiries, optional analytics (only if you allow them), trailers and IngramSpark links.
 
 ## Cite this page
 

@@ -4,7 +4,7 @@
   Strict-Transport-Security: max-age=31536000
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-Ctsx1bIEwECrcAKMh/DQkpCunflC5v3Umw2iadCs5kQ=' https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com; font-src 'self'; connect-src 'self' https://www.clarity.ms https://*.clarity.ms https://c.bing.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://heyzine.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://*.clarity.ms https://www.googletagmanager.com 'sha256-Ctsx1bIEwECrcAKMh/DQkpCunflC5v3Umw2iadCs5kQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com https://*.clarity.ms https://c.bing.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://*.clarity.ms https://c.bing.com https://*.google-analytics.com https://*.analytics.google.com; media-src 'self'; frame-src https://www.youtube-nocookie.com https://heyzine.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
 
 /assets/*
   Cache-Control: public, max-age=604800
