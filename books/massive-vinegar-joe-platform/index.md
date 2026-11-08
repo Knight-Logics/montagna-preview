@@ -14,6 +14,7 @@ China wins U.N. backing to strike North Korea, then moves on Hong Kong and Taiwa
 - Author: Stephen Francis Montagna
 - Genre: Pacific military thriller
 - Paperback: ISBN-13 978-1-970301-12-0
+- Hardback: ISBN-13 978-1-970301-13-7
 
 **Across the Pacific, deception threatens a fragile balance of power.**
 
@@ -41,7 +42,7 @@ The massive floating military base the United States connects in the Pacific, in
 
 ### How long is Massive Vinegar Joe Platform?
 
-The paperback runs 1,026 pages in a 6 × 9 inch trim, according to its IngramSpark listing.
+Both the paperback and the hardback run 1,026 pages in a 6 × 9 inch trim, according to their IngramSpark listings.
 
 ### Is Massive Vinegar Joe Platform a standalone novel?
 
@@ -49,7 +50,7 @@ Yes. Massive Vinegar Joe Platform stands alone; no other book needs to be read f
 
 ### What are the ISBNs for Massive Vinegar Joe Platform?
 
-Paperback: ISBN-13 978-1-970301-12-0. Any bookshop can order it with the ISBN.
+Paperback: ISBN-13 978-1-970301-12-0. Hardback: ISBN-13 978-1-970301-13-7. Any bookshop can order it with the ISBN.
 
 ### Where can I read more about Massive Vinegar Joe Platform?
 
@@ -60,7 +61,7 @@ Read the [editorial review](https://stephenfmontagnabooks.com/reviews/massive-vi
 - The author’s own description of Massive Vinegar Joe Platform, given in full on this page
 - [Massive Vinegar Joe Platform book portfolio (original flipbook)](https://heyzine.com/flip-book/a57fca1950.html)
 - [Editorial review of Massive Vinegar Joe Platform — Olivia Johnson, PacificReviews](https://stephenfmontagnabooks.com/reviews/massive-vinegar-joe-platform/)
-- Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-12-0
+- Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-12-0; Hardback ISBN-13 978-1-970301-13-7
 - [Bookseller listing: Massive Vinegar Joe Platform (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=qXkxD5XWxI6h96YDYuH4crYol1CG7HiyY3rPVPmwsfM)
 
 ## Cite this page

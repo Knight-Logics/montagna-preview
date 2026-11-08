@@ -279,3 +279,33 @@ a.buy-format:hover em{background:#e6cd96}
 .buy-box.on-dark .buy-format.is-pending em{border-color:rgba(217,187,128,.55);color:#d8c69e}
 .buy-box.on-dark .buy-note{color:#d8c69e}
 .search-add{text-decoration:none}
+
+/* Reader's-guide book panel + solid header on scroll (Claude, 2026-11-07). Markup: scripts/shop.py shelf(); rotation and the
+   header-solid class: end of dist/app.js. Wide screens get a sticky column beside the guide; narrower ones get the card after it. */
+.site-header{transition:background-color .35s ease}
+.header-solid .site-header,.header-solid .light-header .site-header{background:#0c2424}
+.guide-shelf{margin-top:56px;max-width:520px;background:#fffdf7;border:1px solid #e4dccb;border-top:2px solid #b08a45;padding:24px 24px 20px;box-shadow:0 20px 44px -30px rgba(12,36,36,.45)}
+.guide-shelf>.eyebrow{margin:0 0 16px}
+.shelf-stage{transition:opacity .22s ease}
+.shelf-stage.is-turning{opacity:0}
+.shelf-head{display:grid;grid-template-columns:104px minmax(0,1fr);gap:18px;align-items:start;margin-bottom:4px}
+.shelf-cover img{display:block;width:104px;height:auto;box-shadow:0 12px 24px -12px rgba(0,0,0,.5)}
+.shelf-cover-link{display:block;border:0}
+.reader-guide .guide-shelf p{margin:0}
+.reader-guide .shelf-kicker{font:600 9px/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#77664a;margin:2px 0 8px}
+.reader-guide .shelf-title{font-family:var(--serif);font-size:25px;line-height:1.08;color:var(--green);margin:0 0 10px}
+.reader-guide .shelf-title a{color:inherit;border-bottom:0;text-decoration:none}
+.reader-guide .shelf-title a:hover,.reader-guide .shelf-title a:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.reader-guide .shelf-tagline{font-size:14px;line-height:1.55;color:#3c5248}
+.guide-shelf .buy-note{font-size:11px;margin:0}
+.shelf-controls{display:flex;align-items:center;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid #ebe4d5}
+.shelf-controls[hidden]{display:none}
+.shelf-controls button{width:36px;height:36px;display:grid;place-items:center;border:1px solid #cdbf9f;border-radius:50%;background:transparent;color:#1a4034;cursor:pointer;font-size:15px;line-height:1;padding:0}
+.shelf-controls button:hover,.shelf-controls button:focus-visible{background:#1a4034;color:#f7f4ec;border-color:#1a4034}
+.shelf-count{flex:1;text-align:center;font:600 10px/1 var(--sans);letter-spacing:.16em;color:#5f6f64}
+@media(min-width:1100px){
+.reader-guide{display:grid;grid-template-columns:minmax(0,740px) minmax(300px,340px);column-gap:clamp(56px,6.5vw,140px);align-items:start}
+.reader-guide .guide-shelf{position:sticky;top:calc(clamp(86px,7vw,118px) + 32px);margin-top:6px}
+}
+@media(prefers-reduced-motion:reduce){.shelf-stage,.site-header{transition:none}}
+.buy-format em span{font-size:inherit;letter-spacing:inherit;text-transform:none;color:inherit}

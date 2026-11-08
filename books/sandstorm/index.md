@@ -14,6 +14,7 @@ A rogue Russian admiral sells Iran nuclear-tipped submarine missiles. U.S. speci
 - Author: Stephen Francis Montagna
 - Genre: Special forces nuclear thriller
 - Paperback: ISBN-13 978-1-970301-14-4
+- Hardback: ISBN-13 978-1-970301-15-1
 
 **A covert mission into Iran to stop a nuclear threat.**
 
@@ -41,11 +42,11 @@ A rogue Russian admiral sells Iran nuclear-tipped submarine-launched missiles. A
 
 ### Is Sandstorm available in hardback?
 
-Sandstorm is listed in paperback, ISBN 978-1-970301-14-4. No hardback edition is listed for it.
+Yes. IngramSpark sells Sandstorm in hardback (ISBN 978-1-970301-15-1) and in paperback (ISBN 978-1-970301-14-4); both run 792 pages.
 
 ### What are the ISBNs for Sandstorm?
 
-Paperback: ISBN-13 978-1-970301-14-4. Any bookshop can order it with the ISBN.
+Paperback: ISBN-13 978-1-970301-14-4. Hardback: ISBN-13 978-1-970301-15-1. Any bookshop can order it with the ISBN.
 
 ### Where can I read more about Sandstorm?
 
@@ -56,7 +57,7 @@ Read the [editorial review](https://stephenfmontagnabooks.com/reviews/sandstorm/
 - The author’s own description of Sandstorm, given in full on this page
 - [Sandstorm book portfolio (original flipbook)](https://heyzine.com/flip-book/e6e91a6947.html)
 - [Editorial review of Sandstorm — Caroline Reyes, Resident Reviewer, Authors Choice LLC](https://stephenfmontagnabooks.com/reviews/sandstorm/)
-- Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-14-4
+- Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-14-4; Hardback ISBN-13 978-1-970301-15-1
 
 ## Cite this page
 
