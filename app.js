@@ -32,7 +32,23 @@ function updateSaved(){
  $$('[data-save]').forEach(b=>{const yes=saved.includes(b.dataset.save);b.setAttribute('aria-pressed',String(yes));b.textContent=yes?'✓':'＋';b.setAttribute('aria-label',(yes?'Remove ':'Save ')+(catalog.find(x=>x.slug===b.dataset.save)?.title||'book')+(yes?' from':' to')+' your reading list');});
 }
 function persistSaved(){try{localStorage.setItem('montagna-reading-list',JSON.stringify(saved));}catch{toast('Browser storage is unavailable. This list will last for this visit.');}updateSaved();}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-save]');if(!b)return;const slug=b.dataset.save;if(saved.includes(slug)){saved=saved.filter(s=>s!==slug);toast('Removed from your reading list.');}else{saved.push(slug);toast('Saved to your reading list.');}persistSaved();renderReadingList();filterBooks();});
+/* Anonymous button counts (2026-11-08, Claude). Every press of a Paperback/Hardback buy button and every book saved to the
+   reading list is counted on this site's own server (POST /api/count, functions/api/count.js, Cloudflare D1 database
+   "montagna-counts"): the book, the edition, where on the site, and the day. No cookie, no identifier and no IP address is
+   stored, so it runs for every visitor and gives true totals (privacy page, "Anonymous button counts"). The optional
+   Google/Clarity analytics (analytics.js) only see visitors who allow them. Placement values match analytics.js. */
+const countPress=(()=>{
+ const editions=new Map();
+ try{const c=JSON.parse(document.getElementById('edition-catalog')?.textContent||'{}');for(const [slug,b] of Object.entries(c.books||{}))for(const ed of b.editions||[]){if(!ed.url)continue;try{const u=new URL(ed.url,location.origin);u.hash='';editions.set(u.href,[slug,ed.format]);}catch{}}}catch{}
+ const where=el=>{if(el.closest('.guide-shelf'))return'shelf';if(el.closest('.search-results'))return'search';if(el.closest('.reading-list-grid'))return'reading-list';const p=location.pathname;if(p==='/')return'home';if(/^\/books\/[^/]+/.test(p))return'book';if(/^\/books\/?$/.test(p))return'books';if(/^\/reviews\//.test(p))return'review';if(/^\/portfolio\//.test(p))return'portfolio';if(/^\/series\//.test(p))return'series';if(/^\/(collections|new-release)(\/|$)/.test(p))return'collections';return'other';};
+ const live=['stephenfmontagnabooks.com','www.stephenfmontagnabooks.com'].includes(location.hostname);
+ const send=(k,b,f,el)=>{if(!live)return;let test=false;try{test=localStorage.getItem('montagna-count-test')==='1';}catch{}
+  const body=JSON.stringify({k,b,f:f||'',p:test?'test':where(el)});try{if(!(navigator.sendBeacon&&navigator.sendBeacon('/api/count',body)))fetch('/api/count',{method:'POST',body,keepalive:true}).catch(()=>{});}catch{}};
+ const buy=e=>{if(e.type==='auxclick'?e.button!==1:e.button!==0)return;const a=e.target.closest?.('a[href]');if(!a)return;let u;try{u=new URL(a.href,location.origin);u.hash='';}catch{return;}const hit=editions.get(u.href);if(hit)send('buy',hit[0],hit[1],a);};
+ document.addEventListener('click',buy,true);document.addEventListener('auxclick',buy,true);
+ return send;
+})();
+document.addEventListener('click',e=>{const b=e.target.closest('[data-save]');if(!b)return;const slug=b.dataset.save;if(saved.includes(slug)){saved=saved.filter(s=>s!==slug);toast('Removed from your reading list.');}else{saved.push(slug);countPress('save',slug,'',b);toast('Saved to your reading list.');}persistSaved();renderReadingList();filterBooks();});
 updateSaved();
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:.06});
 function observe(){ $$('.reveal').forEach(e=>observer.observe(e)); }observe();

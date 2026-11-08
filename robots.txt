@@ -18,6 +18,7 @@ Allow: /
 Disallow: /cart/
 Disallow: /checkout/
 Disallow: /reading-list/
+Disallow: /api/
 
 # AI training crawlers: the text may be learned from; the novels' interior pages, review scans, films and cover art may not.
 User-agent: GPTBot
@@ -35,6 +36,7 @@ Allow: /
 Disallow: /cart/
 Disallow: /checkout/
 Disallow: /reading-list/
+Disallow: /api/
 Disallow: /assets/folios/
 Disallow: /assets/review-
 Disallow: /films/
@@ -47,5 +49,6 @@ Allow: /
 Disallow: /cart/
 Disallow: /checkout/
 Disallow: /reading-list/
+Disallow: /api/
 
 Sitemap: https://stephenfmontagnabooks.com/sitemap.xml

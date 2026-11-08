@@ -88,13 +88,28 @@
     } catch (_) { /* Only the site's published local film paths are tracked. */ }
   }
   const canMeasure = () => loaded && choice === 'granted' && !privacySignal && !privateRoute;
+  // 2026-11-08 (Claude): where on the page a button was pressed. The book panel beside the reader's guide is 'shelf'.
+  // Keep these values in step with dist/app.js (anonymous counts) and functions/api/count.js.
+  const placementOf = element => {
+    if (element.closest('.guide-shelf')) return 'shelf';
+    if (element.closest('.search-results')) return 'search';
+    const path = location.pathname;
+    if (path === '/') return 'home';
+    if (/^\/books\/[^/]+/.test(path)) return 'book';
+    if (/^\/books\/?$/.test(path)) return 'books';
+    if (/^\/reviews\//.test(path)) return 'review';
+    if (/^\/portfolio\//.test(path)) return 'portfolio';
+    if (/^\/series\//.test(path)) return 'series';
+    if (/^\/(collections|new-release)(\/|$)/.test(path)) return 'collections';
+    return 'other';
+  };
   const sendReaderEvent = (name, parameters) => {
     if (!canMeasure()) return false;
     if (ga4 && typeof window.gtag === 'function') {
       window.gtag('event', name, {...parameters, send_to:ga4});
     }
     if (clarityId && typeof window.clarity === 'function') {
-      for (const key of ['book_slug', 'book_format', 'trailer_id']) {
+      for (const key of ['book_slug', 'book_format', 'placement', 'trailer_id']) {
         if (parameters[key]) window.clarity('set', key, parameters[key]);
       }
       window.clarity('event', name + (name === 'trailer_progress' ? '_' + parameters.video_percent : ''));
@@ -110,12 +125,24 @@
       url.hash = '';
       const edition = editions.get(url.href);
       if (!edition) return;
-      const placement = link.closest('.search-results') ? 'search' : location.pathname === '/' ? 'home' : /^\/books\/[^/]+/.test(location.pathname) ? 'book' : 'other';
-      sendReaderEvent('book_buy_click', {...edition, placement});
+      sendReaderEvent('book_buy_click', {...edition, placement:placementOf(link)});
     } catch (_) { /* Unrecognized destinations remain unmeasured. */ }
   };
   document.addEventListener('click', buyClick, true);
   document.addEventListener('auxclick', buyClick, true);
+
+  // 2026-11-08 (Claude): a book saved to the reading list ("+"). Only the book's public slug is sent, never the list.
+  // Capture phase: this runs before dist/app.js updates the list, so a slug already in storage means a removal.
+  document.addEventListener('click', event => {
+    if (!canMeasure()) return;
+    const button = event.target.closest?.('[data-save]');
+    const slug = button?.dataset.save || '';
+    if (!/^[a-z0-9-]{1,80}$/.test(slug)) return;
+    let list = [];
+    try { list = JSON.parse(localStorage.getItem('montagna-reading-list') || '[]'); } catch (_) { list = []; }
+    if (Array.isArray(list) && list.includes(slug)) return;
+    sendReaderEvent('reading_list_add', {book_slug:slug, placement:placementOf(button)});
+  }, true);
 
   const videoStates = new WeakMap();
   const media = event => {
