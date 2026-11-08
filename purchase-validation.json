@@ -1164,5 +1164,35 @@
     "format": null,
     "validationLevel": "HTTP status and public page/Open Graph title only; checkout, availability, price, format and ISBN not verified",
     "evidenceFile": "purchase-pages\\479ae3cdbb66.html"
+  },
+  "https://shop.ingramspark.com/b/084?params=qXkxD5XWxI6h96YDYuH4crYol1CG7HiyY3rPVPmwsfM": {
+    "url": "https://shop.ingramspark.com/b/084?params=qXkxD5XWxI6h96YDYuH4crYol1CG7HiyY3rPVPmwsfM",
+    "expectedBooks": [
+      {
+        "title": "Massive Vinegar Joe Platform",
+        "slug": "massive-vinegar-joe-platform",
+        "sourceLinkIndex": 2
+      }
+    ],
+    "observedAtUTC": "2026-11-07T18:40:00+00:00",
+    "httpStatus": 200,
+    "finalURL": "https://shop.ingramspark.com/b/084?params=qXkxD5XWxI6h96YDYuH4crYol1CG7HiyY3rPVPmwsfM",
+    "pageTitle": "Buy Massive Vinegar Joe Platform",
+    "actualTitle": "Massive Vinegar Joe Platform",
+    "matches": [
+      {
+        "title": "Massive Vinegar Joe Platform",
+        "slug": "massive-vinegar-joe-platform",
+        "sourceLinkIndex": 2,
+        "exactNormalizedTitleMatch": true,
+        "titleWithSubtitleMatch": true,
+        "titleMatch": true,
+        "matchStatus": "exact_title"
+      }
+    ],
+    "isbn": "978-1-970301-12-0",
+    "format": "paperback",
+    "price": "$30.95",
+    "source": "IngramSpark Share & Sell email for VINEGAR JOE PB (2025-12-08), opened in Chrome 2026-11-07 (Claude)"
   }
 }

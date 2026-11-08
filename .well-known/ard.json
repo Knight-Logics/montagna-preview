@@ -1,7 +1,7 @@
 {
   "entries": [
     {
-      "identifier": "urn:air:stephenfrancismontagna.com:library:montagna-library",
+      "identifier": "urn:air:stephenfmontagnabooks.com:library:montagna-library",
       "displayName": "Stephen Francis Montagna library",
       "type": "application/agent-skills+md",
       "url": "https://knight-logics.github.io/montagna-preview/agent-skills/montagna-library/SKILL.md",
@@ -26,8 +26,8 @@
         "reading order",
         "ISBN"
       ],
-      "version": "2026-10-28",
-      "updatedAt": "2026-10-28T00:00:00Z",
+      "version": "2026-11-07",
+      "updatedAt": "2026-11-07T00:00:00Z",
       "metadata": {
         "llmsTxt": "https://knight-logics.github.io/montagna-preview/llms.txt",
         "catalog": "https://knight-logics.github.io/montagna-preview/catalog.json",

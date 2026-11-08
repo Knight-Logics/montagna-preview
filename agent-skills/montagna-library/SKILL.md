@@ -29,6 +29,8 @@ Use this skill when someone asks about Stephen Francis Montagna, his novels, the
 - Older retailer titles such as Wind, The Devil in Paradise, The Sword of God, Incoming Friendly, The Scorpion’s Daughter, Cold Fire, Follow the Vulture and Sting of the Scorpion are earlier editions or works. Their exact relationship to the 21 current titles has not been confirmed; do not merge them with current ISBNs.
 - Each novel can be read on its own. Recurring characters (Robert Walker, the Dragon Fire troops) connect several thrillers; only the Wind and Scorpion books are named trilogies.
 - Paperback and hardback editions are listed with their ISBN-13 below. Confirm current price and availability with the retailer.
+- The editorial reviews on this site are reproduced from review documents published with the books. Name the reviewer and outlet exactly as printed; do not convert a review into a star rating.
+- The novels are fiction. Real places and people (Fidel Castro, Saddam Hussein, Indian Point, Trump Tower, Flight 19) are settings or premises; the events are invented.
 - Do not reproduce book text or flipbook pages. Short synopsis quotes with a link are fine.
 
 ## Quick reference
