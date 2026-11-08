@@ -2,11 +2,12 @@
   'use strict';
   const script = document.currentScript;
   const ga4 = script?.dataset.ga4 || '';
+  const googleTag = script?.dataset.googleTag || '';
   const clarityId = script?.dataset.clarity || '';
-  if (!/^G-[A-Z0-9]+$/.test(ga4) && !/^[a-z0-9]{6,20}$/.test(clarityId)) return;
+  if (!/^G-[A-Z0-9]+$/.test(ga4) && !/^GTM-[A-Z0-9]+$/.test(googleTag) && !/^[a-z0-9]{6,20}$/.test(clarityId)) return;
   if (!['stephenfmontagnabooks.com', 'www.stephenfmontagnabooks.com'].includes(location.hostname)) return;
   const key = 'montagna-analytics-consent-v1';
-  const serviceSignature = ga4 + '|' + clarityId;
+  const serviceSignature = ga4 + '|' + clarityId + (googleTag ? '|' + googleTag : '');
   const maxAge = 180 * 24 * 60 * 60 * 1000;
   let loaded = false;
   let lastFocus = null;
@@ -16,7 +17,7 @@
     if (saved && saved.services === serviceSignature && ['granted', 'denied'].includes(saved.choice) && saved.time <= Date.now() && Date.now() - saved.time < maxAge) choice = saved.choice;
   } catch (_) { /* Analytics remains off if storage is unavailable. */ }
   const privacySignal = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
-  const services = [ga4 ? 'Google Analytics' : '', clarityId ? 'Microsoft Clarity' : ''].filter(Boolean).join(' and ');
+  const services = [ga4 || googleTag ? 'Google Analytics' : '', clarityId ? 'Microsoft Clarity' : ''].filter(Boolean).join(' and ');
   const addScript = (src, id) => {
     if (document.getElementById(id)) return;
     const tag = document.createElement('script');
@@ -31,17 +32,23 @@
   const start = () => {
     if (loaded || privacySignal) return;
     loaded = true;
-    if (ga4) {
-      window['ga-disable-' + ga4] = false;
+    const privateRoute = /^\/(reading-list|contact|contact-us)(\/|$)/.test(location.pathname);
+    if ((ga4 || googleTag) && !(googleTag && privateRoute)) {
+      if (ga4) window['ga-disable-' + ga4] = false;
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
       window.gtag('consent', 'default', {analytics_storage:'denied', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
       window.gtag('consent', 'update', {analytics_storage:'granted', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
+      window.gtag('set', {page_location:cleanUrl(location.href), page_referrer:cleanUrl(document.referrer), allow_google_signals:false, allow_ad_personalization_signals:false, allow_enhanced_conversions:false});
       window.gtag('js', new Date());
-      window.gtag('config', ga4, {page_location:cleanUrl(location.href), page_referrer:cleanUrl(document.referrer), allow_google_signals:false, allow_ad_personalization_signals:false});
-      addScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ga4), 'montagna-ga4');
+      if (googleTag) {
+        addScript('https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(googleTag), 'montagna-google-tag');
+      } else {
+        window.gtag('config', ga4, {page_location:cleanUrl(location.href), page_referrer:cleanUrl(document.referrer), allow_google_signals:false, allow_ad_personalization_signals:false});
+        addScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ga4), 'montagna-ga4');
+      }
     }
-    if (clarityId && !/^\/(reading-list|contact|contact-us)(\/|$)/.test(location.pathname)) {
+    if (clarityId && !privateRoute) {
       document.body.setAttribute('data-clarity-mask', 'true');
       window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
       window.clarity('consentv2', {analytics_Storage:'granted', ad_Storage:'denied'});
