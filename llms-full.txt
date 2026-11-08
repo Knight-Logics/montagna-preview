@@ -2,8 +2,6 @@
 
 > Stephen Francis Montagna is an American novelist, born in Brooklyn and drawn to the Florida Keys, whose 21 current books run from Special Forces and counterterrorism thrillers to the female-samurai Wind Trilogy. This file maps the official website for language models and AI agents: every novel, both reading orders, every page with its own summary, editions with ISBNs, trailers, book portfolios and editorial reviews.
 
-Status: pre-launch build of the author’s official website. Pages are deliberately not indexed yet (noindex, robots.txt Disallow). Treat it as the author’s catalog of record for the 21 current titles. Books are sold through IngramSpark: each edition on a book page links to its IngramSpark Buy Now page.
-
 ## Quick facts
 
 - Name: Stephen Francis Montagna (also credited as Stephen F. Montagna)
@@ -47,7 +45,7 @@ Status: pre-launch build of the author’s official website. Pages are deliberat
 - [Book portfolios](https://stephenfmontagnabooks.com/portfolio/): the author’s portfolios for twelve novels — synopsis, characters, themes — as flipbooks and text.
 - [Book reviews](https://stephenfmontagnabooks.com/reviews/): 17 editorial reviews, each in full text beside the original document.
 - [Collections](https://stephenfmontagnabooks.com/collections/): New Release, the 2026 collection and the 2025 collection.
-- [Contact](https://stephenfmontagnabooks.com/contact-us/): reader, bookshop, event and press enquiries.
+- [Contact](https://stephenfmontagnabooks.com/contact-us/): reader, bookshop, event and press enquiries — email contact@stephenfmontagnabooks.com.
 
 ## The Wind Trilogy — historical fantasy, read in order
 
@@ -123,7 +121,7 @@ Robert Walker and his Special Forces team: an assassination plot, the retaliatio
 - Every page carries schema.org JSON-LD. Book pages describe a Book with author, genre, series position (where confirmed), cover image and paperback/hardcover editions with ISBN-13. Series pages describe a BookSeries; the screening room lists VideoObjects; the author page is a ProfilePage for the Person.
 - URL patterns: https://stephenfmontagnabooks.com/books/{slug}/ (novel), https://stephenfmontagnabooks.com/series/{wind|scorpion}/ (reading order), https://stephenfmontagnabooks.com/portfolio/{slug}/ (flipbook), https://stephenfmontagnabooks.com/reviews/{slug}/ (review documents). Slugs are listed in catalog.json.
 - Search without a form: https://stephenfmontagnabooks.com/books/?q=samurai or https://stephenfmontagnabooks.com/books/?collection=scorpion.
-- WebMCP: in browsers that expose navigator.modelContext the site registers read-only tools — search_books(query, series?), get_book_details(slug or title), get_reading_order(series). The contact form is annotated as the declarative tool prepare_enquiry; its tool description says whether delivery is connected.
+- WebMCP: in browsers that expose navigator.modelContext the site registers read-only tools — search_books(query, series?), get_book_details(slug or title), get_reading_order(series). The contact form is annotated as the declarative tool prepare_enquiry; it opens the visitor’s own email app addressed to the contact address, and its tool description says so.
 - Agent skill: [https://stephenfmontagnabooks.com/agent-skills/montagna-library/SKILL.md](https://stephenfmontagnabooks.com/agent-skills/montagna-library/SKILL.md), advertised by the Agentic Resource Discovery manifest at [https://stephenfmontagnabooks.com/.well-known/ard.json](https://stephenfmontagnabooks.com/.well-known/ard.json).
 - Full text version of this file with every synopsis and edition: [https://stephenfmontagnabooks.com/llms-full.txt](https://stephenfmontagnabooks.com/llms-full.txt).
 - Every page has a Markdown twin at its URL + index.md (for example https://stephenfmontagnabooks.com/books/birth-of-wind/index.md), linked from the page head as rel=alternate type=text/markdown.

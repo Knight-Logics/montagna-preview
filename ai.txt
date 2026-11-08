@@ -1,4 +1,3 @@
-# STATUS: pre-launch build of the official website — not indexed yet.
 # ai.txt — Stephen Francis Montagna — Official Author Website
 # https://stephenfmontagnabooks.com/ai.txt · updated 2026-11-07
 #
@@ -128,7 +127,7 @@
 # reproduce book text; present a title as a bestseller or award winner; merge older retailer titles with current ISBNs.
 #
 # PERMISSIONS
-# https://stephenfmontagnabooks.com/copyright/ · https://stephenfmontagnabooks.com/contact-us/
+# https://stephenfmontagnabooks.com/copyright/ · https://stephenfmontagnabooks.com/contact-us/ · contact@stephenfmontagnabooks.com
 
 User-Agent: *
 Allow: /
