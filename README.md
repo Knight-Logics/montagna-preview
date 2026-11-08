@@ -1,5 +1,3 @@
-# Stephen Francis Montagna — website concept (preview)
+# Retired preview
 
-Compiled, unindexed presentation build by Knight Logics. Not the author's official site.
-
-Generated from the private project `stephen-montagna-demo`. Do not edit this repository by hand.
+This was the design preview of Stephen Francis Montagna's website. The site launched on https://stephenfmontagnabooks.com on 7 November 2026; every page here forwards to the same page there. The live site is published from the `cloudflare-site` branch (Cloudflare Pages).
