@@ -1,4 +1,7 @@
 'use strict';
+/* 2026-11-08 (Claude): the build adds ?v=<content hash> to this script's URL; motion.js and catalog.json reuse it so a
+   publish never pairs new pages with a browser-cached old copy (Cloudflare serves scripts with max-age=14400). */
+const ASSET_V=(()=>{try{return new URL(document.currentScript.src).search}catch(e){return ''}})();
 document.documentElement.classList.add('js');
 /* Motion wake (PageSpeed pass, 2026-10-28). The WebGL/canvas scenes (motion.js) and the decorative CSS loops
    start on the visitor's first interaction, or after the page has sat idle for IDLE_MS once it has loaded.
@@ -7,7 +10,7 @@ document.documentElement.classList.add('js');
    ?no-webgl and ?feature=N (trailer renderer, previews, screenshots) wake immediately. */
 (()=>{const d=document.documentElement,EVENTS=['pointerdown','pointermove','keydown','wheel','touchstart','scroll'],IDLE_MS=6000;let woke=false;
 const wake=()=>{if(woke)return;woke=true;EVENTS.forEach(e=>removeEventListener(e,wake,true));d.classList.add('motion-live');
- if(document.querySelector('[data-living-scene]')&&!document.querySelector('script[data-motion]')){const s=document.createElement('script');s.src='/motion.js';s.async=true;s.dataset.motion='';document.head.append(s);}
+ if(document.querySelector('[data-living-scene]')&&!document.querySelector('script[data-motion]')){const s=document.createElement('script');s.src='/motion.js'+ASSET_V;s.async=true;s.dataset.motion='';document.head.append(s);}
  document.dispatchEvent(new CustomEvent('montagna:wake'));};
 window.MontagnaWake={get live(){return woke;},now:wake};
 if(d.hasAttribute('data-manual-clock')||/[?&](manual-clock|no-webgl|feature=)/.test(location.search)){wake();return;}
@@ -63,7 +66,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-trailer]')
 videoDialog?.addEventListener('close',()=>$('#video-container').replaceChildren());
 $('#enquiry-form')?.addEventListener('submit',async e=>{e.preventDefault();const form=e.target;const status=$('#form-status');const endpoint=(form.dataset.formspree||'').trim();const mailto=(form.dataset.mailto||'').trim();if(!endpoint&&mailto){const d=new FormData(form);if(d.get('_gotcha'))return;const subject='Message for Stephen Francis Montagna — '+(d.get('topic')||'');const body=(d.get('message')||'')+'\n\n'+(d.get('name')||'')+'\n'+(d.get('email')||'');location.href='mailto:'+mailto+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);status.textContent='Your email app should open with the message ready to send. If it does not, write to '+mailto+'.';return;}if(!endpoint){status.textContent='The form is not connected yet, so nothing was sent.';toast('Nothing was sent: the form is not connected yet.');return;}const button=form.querySelector('button[type=submit]');button.disabled=true;status.textContent='Sending…';try{const res=await fetch(endpoint,{method:'POST',headers:{Accept:'application/json'},body:new FormData(form)});if(!res.ok)throw Error('send failed');form.reset();status.textContent='Your message is on its way.';toast('Message sent.');}catch{status.textContent='The message could not be sent. Please try again in a moment.';toast('The message could not be sent.');}finally{button.disabled=false;}});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-retail]');if(!b)return;const dialog=document.createElement('dialog');dialog.setAttribute('aria-label','Edition purchase links');const book=catalog.find(x=>x.slug===b.dataset.retail);dialog.innerHTML='<div class="dialog-top"><span class="eyebrow">FIND YOUR EDITION</span><button class="icon-button" aria-label="Close edition information">✕</button></div>';const p=document.createElement('p');p.className='retailer-notice';const links=book?.verifiedRetailLinks||[];p.textContent=links.length?'Choose an IngramSpark listing for '+book.title+'. The title has been checked against the retailer’s public page. Please confirm the binding, ISBN, price, and availability with the retailer before purchase. Retailer links open in a new tab.':'The edition links for this title need to be corrected before launch. The book’s story and collection remain available here. Ask the author for the current purchase destination.';dialog.append(p);links.forEach((item,i)=>{const row=document.createElement('div');row.className='retailer-row';const a=document.createElement('a');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='IngramSpark · '+book.title+' · listing '+(i+1)+' ↗';row.append(a);dialog.append(row);});if(!links.length){const a=document.createElement('a');a.href='/contact/';a.className='text-link';a.textContent='Prepare a reader enquiry ↗';dialog.append(a);}document.body.append(dialog);dialog.querySelector('button').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>dialog.remove());dialog.showModal();});
-fetch('/catalog.json').then(r=>{if(!r.ok)throw Error('Catalog unavailable');return r.json();}).then(data=>{catalog=data;saved=saved.filter(s=>catalog.some(b=>b.slug===s));updateSaved();filterBooks();renderReadingList();if(searchDialog.open)renderSearch();}).catch(()=>{toast('Book search could not load. All book pages remain available.');});
+fetch('/catalog.json'+ASSET_V).then(r=>{if(!r.ok)throw Error('Catalog unavailable');return r.json();}).then(data=>{catalog=data;saved=saved.filter(s=>catalog.some(b=>b.slug===s));updateSaved();filterBooks();renderReadingList();if(searchDialog.open)renderSearch();}).catch(()=>{toast('Book search could not load. All book pages remain available.');});
 
 let editionCatalog={books:{}};
 try{editionCatalog=JSON.parse($('#edition-catalog')?.textContent||'{"books":{}}');}catch{editionCatalog={books:{}};}
@@ -99,7 +102,7 @@ paintCart();
 (()=>{const mc=document.modelContext||navigator.modelContext;if(!mc||!mc.registerTool)return;
 const SERIES={wind:['birth-of-wind','the-wind-s-breathe','night-wind'],scorpion:['eagle-s-talon','the-scorpion-sting','daughter-of-the-scorpion']};
 const NAMES={wind:'The Wind Trilogy',scorpion:'The Scorpion Trilogy',thrillers:'Thrillers & Speculative Fiction'};
-let data=null;const load=async()=>data||(data=await fetch('/catalog.json').then(r=>r.json()));
+let data=null;const load=async()=>data||(data=await fetch('/catalog.json'+ASSET_V).then(r=>r.json()));
 const abs=p=>new URL(p,location.href).href;
 const card=b=>({title:b.title,slug:b.slug,url:abs('/books/'+b.slug+'/'),series:NAMES[b.group],order:b.order||null,tagline:b.tagline||'',cover:abs(b.cover)});
 const text=o=>JSON.stringify(o);
