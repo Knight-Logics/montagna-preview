@@ -29,15 +29,17 @@
     const availableW = Math.max(240, native.clientWidth);
     const chrome = (nav?.offsetHeight || 0) + (bar?.offsetHeight || 0) + (full ? 36 : 16);
     const availableH = Math.max(280, native.clientHeight - chrome);
-    // One page below this width. It matches 2 * pageSize.minWidth, which is when the
-    // page-turn engine itself switches to a single page.
-    const single = availableW < 400;
+    // One page until the screen can hold two scans side by side at their real size.
+    // The cutoff matches 2 * pageSize.minWidth, which is when the page-turn engine
+    // itself switches to a single page. The page scrolls; the type is not shrunk to fit.
+    const single = availableW < 2400;
     const ratio = (single ? pw : pw * 2) / ph;
-    let width = availableW;
+    const cap = Math.min(availableW, single ? pw : pw * 2);
+    let width = cap;
     let height = width / ratio;
-    if (height > availableH) {
+    if (full && height > availableH) {
       height = availableH;
-      width = Math.min(availableW, height * ratio);
+      width = Math.min(cap, height * ratio);
     }
     theatre.style.width = Math.floor(width) + 'px';
     theatre.style.height = Math.floor(height) + 'px';
@@ -52,7 +54,7 @@
       width: 700,
       height: Math.round(700 * ratio),
       size: 'stretch',
-      minWidth: 200,
+      minWidth: 1200,
       maxWidth: 1600,
       minHeight: Math.round(500 * ratio),
       maxHeight: Math.round(1600 * ratio),
