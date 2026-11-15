@@ -15,6 +15,7 @@ After October 7, Iran hides a bioweapon in the false teeth of eight volunteers a
 - Genre: Geopolitical bioterror thriller
 - Paperback: ISBN-13 978-1-970301-32-8
 - Hardback: ISBN-13 978-1-970301-33-5
+- Trailer: https://stephenfmontagnabooks.com/films/the-vector-v6b.mp4
 
 **Eight operatives. Eight cities. A threat without borders.**
 
@@ -43,6 +44,10 @@ A vector is a person infected with a disease who carries it to others. Each of I
 ### When is The Vector set?
 
 In the aftermath of the October 7, 2023 attack on Israel, with the United States drawn into the war. The review published with the novel gives the date.
+
+### Is there a trailer for The Vector?
+
+Yes. The refined cut runs 1 minute 51 seconds and plays from this site in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ### Is The Vector a standalone novel?
 

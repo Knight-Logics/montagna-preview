@@ -92,7 +92,7 @@ The [book page](https://stephenfmontagnabooks.com/books/sandstorm/) has the desc
 ## Sources
 
 - [The author’s own description of Sandstorm](https://stephenfmontagnabooks.com/books/sandstorm/)
-- [Sandstorm book portfolio (original flipbook)](https://heyzine.com/flip-book/e6e91a6947.html)
+- [Sandstorm book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/sandstorm/#book-reader)
 - [Editorial review of Sandstorm — Caroline Reyes, Resident Reviewer, Authors Choice LLC](https://stephenfmontagnabooks.com/reviews/sandstorm/)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-14-4; Hardback ISBN-13 978-1-970301-15-1
 

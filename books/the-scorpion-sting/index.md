@@ -16,6 +16,7 @@ Saddam Hussein sends a new cell into the U.S. to kill the captured operative and
 - Series: Scorpion Trilogy
 - Paperback: ISBN-13 978-1-970301-06-9
 - Hardback: ISBN-13 978-1-970301-07-6
+- Trailer: https://stephenfmontagnabooks.com/films/the-scorpions-sting-trailer.mp4
 
 **The mission is over. The retaliation has only begun.**
 
@@ -44,6 +45,10 @@ Yes. The review published with the novel prints the title as “The Scorpion’s
 ### Do I need to read Eagle’s Talon first?
 
 It helps. The author describes The Scorpion Sting as continuing where [Eagle’s Talon](https://stephenfmontagnabooks.com/books/eagle-s-talon/) ended: the man the new cell is sent to kill is the operative captured in that novel.
+
+### Is there a trailer for The Scorpion Sting?
+
+Yes. It runs 3 minutes 31 seconds and plays from this site in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ### What are the ISBNs for The Scorpion Sting?
 

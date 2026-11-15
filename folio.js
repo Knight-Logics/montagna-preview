@@ -16,36 +16,47 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   let book = null, mode = 'book';
 
+  function isPanelFull() {
+    return document.fullscreenElement === native || native.classList.contains('folio-expanded');
+  }
+
   function fitStage() {
     const nav = root.querySelector('.folio-navigation');
     const bar = root.querySelector('.folio-progress');
-    const open = native.clientWidth >= 760;
-    const ratio = open ? 4 / 3 : 2 / 3;
-    const availableH = Math.max(220, native.clientHeight - (nav?.offsetHeight || 0) - (bar?.offsetHeight || 0) - 16);
+    const pw = Number(host.dataset.pageW) || 900;
+    const ph = Number(host.dataset.pageH) || 1260;
+    const full = isPanelFull();
     const availableW = Math.max(240, native.clientWidth);
+    const chrome = (nav?.offsetHeight || 0) + (bar?.offsetHeight || 0) + (full ? 36 : 16);
+    const availableH = Math.max(280, native.clientHeight - chrome);
+    const single = availableW < 1000;
+    const ratio = single ? pw / ph : (pw * 2) / ph;
     let width = availableW;
     let height = width / ratio;
-    if (height > availableH) { height = availableH; width = height * ratio; }
+    if ((full || !single) && height > availableH) {
+      height = availableH;
+      width = Math.min(availableW, height * ratio);
+      height = width / ratio;
+    }
     theatre.style.width = Math.floor(width) + 'px';
     theatre.style.height = Math.floor(height) + 'px';
-    theatre.dataset.spread = open ? 'open' : 'single';
+    theatre.dataset.spread = single ? 'single' : 'open';
   }
 
   function pageSize() {
     const pw = Number(host.dataset.pageW) || 900;
     const ph = Number(host.dataset.pageH) || 1260;
     const ratio = ph / pw;
-    const open = theatre.dataset.spread !== 'single';
     return {
       width: 700,
       height: Math.round(700 * ratio),
       size: 'stretch',
-      minWidth: 240,
-      maxWidth: 1400,
-      minHeight: Math.round(240 * ratio),
-      maxHeight: Math.round(1400 * ratio),
+      minWidth: 500,
+      maxWidth: 1600,
+      minHeight: Math.round(500 * ratio),
+      maxHeight: Math.round(1600 * ratio),
       showCover: false,
-      usePortrait: !open,
+      usePortrait: true,
       drawShadow: true,
       maxShadowOpacity: .32,
       flippingTime: 950,
@@ -139,18 +150,40 @@
     else if (e.key === 'End') { e.preventDefault(); book?.turnToPage(book.getPageCount() - 1); update(); }
   });
   const expandButton = root.querySelector('[data-folio-expand]');
-  const setExpanded = on => { root.classList.toggle('folio-expanded', on); expandButton.textContent = on ? 'Exit full screen ↙' : 'Expand ↗'; };
+  const exitButton = document.createElement('button');
+  exitButton.type = 'button';
+  exitButton.className = 'folio-exit';
+  exitButton.setAttribute('data-folio-exit', '');
+  exitButton.textContent = 'Exit full screen';
+  native.appendChild(exitButton);
+  const setExpanded = on => {
+    native.classList.toggle('folio-expanded', on);
+    document.body.classList.toggle('folio-screen-open', on);
+    expandButton.textContent = on ? 'Exit full screen ↙' : 'Expand ↗';
+  };
+  async function leaveFull() {
+    if (document.fullscreenElement) {
+      try { await document.exitFullscreen(); return; } catch { /* use the fallback */ }
+    }
+    setExpanded(false);
+    requestAnimationFrame(() => { fitStage(); book?.update(); });
+  }
   expandButton.addEventListener('click', async () => {
-    if (document.fullscreenElement) await document.exitFullscreen?.();
-    else if (root.classList.contains('folio-expanded')) setExpanded(false);
-    else if (root.requestFullscreen) {
-      try { await root.requestFullscreen(); }
+    if (document.fullscreenElement || native.classList.contains('folio-expanded')) { await leaveFull(); return; }
+    if (native.requestFullscreen) {
+      try { await native.requestFullscreen(); }
       catch { setExpanded(true); }
     } else setExpanded(true);
     requestAnimationFrame(() => { fitStage(); book?.update(); });
   });
+  exitButton.addEventListener('click', () => { leaveFull(); });
   document.addEventListener('fullscreenchange', () => {
-    root.querySelector('[data-folio-expand]').textContent = document.fullscreenElement ? 'Exit full screen ↙' : 'Expand ↗';
+    const on = document.fullscreenElement === native;
+    expandButton.textContent = on ? 'Exit full screen ↙' : 'Expand ↗';
+    if (!on) {
+      native.classList.remove('folio-expanded');
+      document.body.classList.remove('folio-screen-open');
+    }
     setTimeout(() => { fitStage(); book?.update(); }, 80);
   });
   let resize;

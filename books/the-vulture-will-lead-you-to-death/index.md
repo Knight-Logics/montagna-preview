@@ -59,7 +59,7 @@ Read the [editorial review](https://stephenfmontagnabooks.com/reviews/the-vultur
 ## Sources
 
 - The author’s own description of The Vulture Will Lead You to Death, given in full on this page
-- [The Vulture Will Lead You to Death book portfolio (original flipbook)](https://heyzine.com/flip-book/cb707a712a.html)
+- [The Vulture Will Lead You to Death book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/the-vulture-will-lead-you-to-death/#book-reader)
 - [Editorial review of The Vulture Will Lead You to Death — Santi Sigh, Authors Choice LLC](https://stephenfmontagnabooks.com/reviews/the-vulture-will-lead-you-to-death/)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-30-4; Hardback ISBN-13 978-1-970301-31-1
 - [Bookseller listing: The Vulture Will Lead You To Death (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=r3VTQg19IL9zaV17oZW10Zrz3XraScbaQQr1HYbWBIS)

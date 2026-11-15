@@ -26,7 +26,7 @@ It draws on it. The first novel opens with a prologue in the creation myth of Iz
 
 ### Is there a Wind Trilogy trailer?
 
-Yes: a 71-second film for the whole trilogy and the official Birth of Wind trailer, both in the [screening room](https://stephenfmontagnabooks.com/films/).
+Yes. The [screening room](https://stephenfmontagnabooks.com/films/) has trailers for [Birth of Wind](https://stephenfmontagnabooks.com/books/birth-of-wind/), [The Wind’s Breathe](https://stephenfmontagnabooks.com/books/the-wind-s-breathe/) and [Night Wind](https://stephenfmontagnabooks.com/books/night-wind/), plus a 71-second film for the whole trilogy.
 
 ## Cite this page
 

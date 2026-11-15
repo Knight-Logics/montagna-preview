@@ -55,7 +55,7 @@ Read the [book portfolio](https://stephenfmontagnabooks.com/portfolio/bio-level-
 ## Sources
 
 - The author’s own description of Bio-Level Three, given in full on this page
-- [Bio-Level Three book portfolio (original flipbook)](https://heyzine.com/flip-book/f31f240707.html)
+- [Bio-Level Three book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/bio-level-three/#book-reader)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-22-9; Hardback ISBN-13 978-1-970301-21-2
 - [Bookseller listing: Bio-Level Three (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=EFmbpdSMHWrFYmPsx3jMY1ZOqCBVk3fcxpRqthidh0v)
 

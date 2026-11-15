@@ -284,7 +284,7 @@ a.buy-format:hover em{background:#e6cd96}
    header-solid class: end of dist/app.js. Wide screens get a sticky column beside the guide; narrower ones get the card after it. */
 .site-header{transition:background-color .35s ease}
 .header-solid .site-header,.header-solid .light-header .site-header{background:#0c2424}
-.guide-shelf{margin-top:56px;max-width:520px;background:#fffdf7;border:1px solid #e4dccb;border-top:2px solid #b08a45;padding:24px 24px 20px;box-shadow:0 20px 44px -30px rgba(12,36,36,.45)}
+.guide-shelf{margin:56px auto 0;max-width:520px;background:#fffdf7;border:1px solid #e4dccb;border-top:2px solid #b08a45;padding:24px 24px 20px;box-shadow:0 20px 44px -30px rgba(12,36,36,.45)}
 .guide-shelf>.eyebrow{margin:0 0 16px}
 .shelf-stage{transition:opacity .22s ease}
 .shelf-stage.is-turning{opacity:0}
@@ -304,8 +304,10 @@ a.buy-format:hover em{background:#e6cd96}
 .shelf-controls button:hover,.shelf-controls button:focus-visible{background:#1a4034;color:#f7f4ec;border-color:#1a4034}
 .shelf-count{flex:1;text-align:center;font:600 10px/1 var(--sans);letter-spacing:.16em;color:#5f6f64}
 @media(min-width:1100px){
-.reader-guide{display:grid;grid-template-columns:minmax(0,740px) minmax(300px,340px);column-gap:clamp(56px,6.5vw,140px);align-items:start}
-.reader-guide .guide-shelf{position:sticky;top:calc(clamp(86px,7vw,118px) + 32px);margin-top:6px}
+.reader-guide{display:grid;grid-template-columns:minmax(0,740px) minmax(300px,340px);column-gap:clamp(56px,6.5vw,140px);align-items:start;justify-content:center}
+.reader-guide .guide-shelf{position:sticky;top:calc(clamp(86px,7vw,118px) + 32px);margin:6px 0 0}
 }
 @media(prefers-reduced-motion:reduce){.shelf-stage,.site-header{transition:none}}
 .buy-format em span{font-size:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
+.film-poster.host-film{cursor:default}
+.film-poster video.host-trailer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#04120f;z-index:4}

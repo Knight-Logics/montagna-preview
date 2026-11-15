@@ -132,7 +132,7 @@ const tools=[
  {name:'get_book_details',description:'Full details of one Stephen Francis Montagna novel: synopsis, the author’s published description, series and position, trailer, and page URL.',
   inputSchema:{type:'object',properties:{book:{type:'string',description:'The book title or its slug (for example "birth-of-wind").'}},required:['book']},
   execute:async({book})=>{const b=await find(book);if(!b)return text({error:'No book with that title. Use search_books first.'});
-   return text({...card(b),synopsis:b.synopsis,publishedDescription:b.sourceSynopsis||null,trailer:b.trailer?'https://www.youtube.com/watch?v='+b.trailer:null,readingOrderUrl:SERIES[b.group]?abs('/series/'+b.group+'/'):null});}},
+   return text({...card(b),synopsis:b.synopsis,publishedDescription:b.sourceSynopsis||null,trailer:b.trailerFile?new URL(b.trailerFile,location.href).href:(b.trailer?'https://www.youtube.com/watch?v='+b.trailer:null),readingOrderUrl:SERIES[b.group]?abs('/series/'+b.group+'/'):null});}},
  {name:'get_reading_order',description:'The reading order of a Stephen Francis Montagna trilogy. Wind is a confirmed order; for Scorpion, Eagle’s Talon is book one and the rest is the suggested path pending the author’s confirmation.',
   inputSchema:{type:'object',properties:{series:{type:'string',enum:['wind','scorpion'],description:'wind = The Wind Trilogy, scorpion = The Scorpion Trilogy.'}},required:['series']},
   execute:async({series})=>{const c=await load();const list=(SERIES[series]||[]).map(s=>card(c.find(b=>b.slug===s)));return text({series:NAMES[series],confirmed:series==='wind',books:list,guide:abs('/series/'+series+'/')});}}

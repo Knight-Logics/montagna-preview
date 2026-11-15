@@ -90,7 +90,7 @@ The [book page](https://stephenfmontagnabooks.com/books/beyond-yesterday/) has t
 ## Sources
 
 - [The author’s own description of Beyond Yesterday](https://stephenfmontagnabooks.com/books/beyond-yesterday/)
-- [Beyond Yesterday book portfolio (original flipbook)](https://heyzine.com/flip-book/1c0d2653cf.html)
+- [Beyond Yesterday book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/beyond-yesterday/#book-reader)
 - [Editorial review of Beyond Yesterday — Caroline Reyes](https://stephenfmontagnabooks.com/reviews/beyond-yesterday/)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-24-3; Hardback ISBN-13 978-1-970301-25-0
 - [Bookseller listing: BEYOND YESTERDAY (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=Mf1Nq0uQCE0FUVvfuA3czQWHgwFB4fuTvO3lFSjj0aT)

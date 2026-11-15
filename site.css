@@ -284,7 +284,7 @@ a.buy-format:hover em{background:#e6cd96}
    header-solid class: end of dist/app.js. Wide screens get a sticky column beside the guide; narrower ones get the card after it. */
 .site-header{transition:background-color .35s ease}
 .header-solid .site-header,.header-solid .light-header .site-header{background:#0c2424}
-.guide-shelf{margin-top:56px;max-width:520px;background:#fffdf7;border:1px solid #e4dccb;border-top:2px solid #b08a45;padding:24px 24px 20px;box-shadow:0 20px 44px -30px rgba(12,36,36,.45)}
+.guide-shelf{margin:56px auto 0;max-width:520px;background:#fffdf7;border:1px solid #e4dccb;border-top:2px solid #b08a45;padding:24px 24px 20px;box-shadow:0 20px 44px -30px rgba(12,36,36,.45)}
 .guide-shelf>.eyebrow{margin:0 0 16px}
 .shelf-stage{transition:opacity .22s ease}
 .shelf-stage.is-turning{opacity:0}
@@ -304,11 +304,13 @@ a.buy-format:hover em{background:#e6cd96}
 .shelf-controls button:hover,.shelf-controls button:focus-visible{background:#1a4034;color:#f7f4ec;border-color:#1a4034}
 .shelf-count{flex:1;text-align:center;font:600 10px/1 var(--sans);letter-spacing:.16em;color:#5f6f64}
 @media(min-width:1100px){
-.reader-guide{display:grid;grid-template-columns:minmax(0,740px) minmax(300px,340px);column-gap:clamp(56px,6.5vw,140px);align-items:start}
-.reader-guide .guide-shelf{position:sticky;top:calc(clamp(86px,7vw,118px) + 32px);margin-top:6px}
+.reader-guide{display:grid;grid-template-columns:minmax(0,740px) minmax(300px,340px);column-gap:clamp(56px,6.5vw,140px);align-items:start;justify-content:center}
+.reader-guide .guide-shelf{position:sticky;top:calc(clamp(86px,7vw,118px) + 32px);margin:6px 0 0}
 }
 @media(prefers-reduced-motion:reduce){.shelf-stage,.site-header{transition:none}}
 .buy-format em span{font-size:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
+.film-poster.host-film{cursor:default}
+.film-poster video.host-trailer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#04120f;z-index:4}
 /* Independently animated photographic worlds, with a static fallback underneath. */
 .living-scene{position:absolute;inset:0;z-index:-3;overflow:hidden;pointer-events:none;background:#102b2b;contain:strict}
 .scene-still,.scene-surface,.scene-life,.scene-vignette,.scene-grain{position:absolute;inset:0;width:100%;height:100%}
@@ -480,6 +482,7 @@ html:has(body.folio-page){scroll-padding-top:15px}
 .living-scene{inset:0;transform:none;will-change:auto}
 .folio-dormant{position:absolute;left:6vw;right:6vw;visibility:hidden;pointer-events:none;top:200px}
 .folio-book-host>.stf__wrapper{height:100%;padding-bottom:0!important}
+.folio-book-host{min-width:0!important;min-height:0!important}
 .folio-navigation{position:relative;z-index:5}
 .series-jump-links{display:flex;gap:45px;justify-content:center;flex-wrap:wrap;padding:24px 6vw;background:#0b2525;color:#cbb88f;border-top:1px solid #ffffff28}
 .series-jump-links a{font-size:10px;line-height:1.8}
@@ -528,6 +531,26 @@ html:has(body.folio-page){scroll-padding-top:15px}
 .folio-workbench:fullscreen .folio-heading,.folio-expanded .folio-heading{margin:0}
 .folio-workbench:fullscreen .folio-heading h2,.folio-expanded .folio-heading h2{font-size:28px}
 .folio-workbench:fullscreen .folio-theatre,.folio-expanded .folio-theatre{height:100%;min-height:0;margin:0}
+.folio-native-panel:fullscreen,.folio-native-panel.folio-expanded{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:100%;height:100%;max-height:none;margin:0;padding:18px 18px 16px;box-sizing:border-box;background:#0b2926}
+.folio-native-panel:fullscreen{position:relative}
+.folio-native-panel:fullscreen .folio-theatre,.folio-native-panel.folio-expanded .folio-theatre{flex:0 0 auto;width:auto;max-width:100%;max-height:none;margin:0}
+.folio-exit{display:none}
+.folio-native-panel:fullscreen .folio-exit,.folio-native-panel.folio-expanded .folio-exit{display:inline-flex;position:absolute;top:14px;right:16px;z-index:4;color:#f7f1e4;border:1px solid rgba(217,187,128,.55);background:rgba(9,26,27,.55);padding:8px 12px;font-size:13px}
+body.folio-screen-open{overflow:hidden}
+body.folio-screen-open #book-reader{z-index:300}
+@media (max-width:1199px){
+  .folio-workbench{max-height:none;min-height:0;overflow:visible}
+  .folio-layout,.folio-native-panel{flex:none;height:auto;min-height:0}
+}
+@media (min-width:1400px){
+  .folio-heading{align-items:center}
+  .folio-note{flex:0 0 auto;display:grid;grid-template-columns:max-content minmax(18rem,22rem);grid-template-rows:repeat(4,auto);column-gap:28px;align-items:center;justify-items:end;text-align:right}
+  .folio-note .eyebrow{grid-column:1;grid-row:1}
+  .folio-note-title{grid-column:1;grid-row:2}
+  .folio-note>p:not(.eyebrow):not(.folio-note-title):not(.folio-side-count){grid-column:1;grid-row:3}
+  .folio-note>.folio-side-count{grid-column:1;grid-row:4}
+  .folio-note .buy-box{grid-column:2;grid-row:1 / span 4;margin:0;max-width:none;width:100%;align-self:center;justify-self:stretch}
+}
 @media (max-width:800px){
   .folio-heading{display:block}
   .folio-note{max-width:none;text-align:left;margin-top:8px}

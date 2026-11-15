@@ -59,7 +59,7 @@ Read the [editorial review](https://stephenfmontagnabooks.com/reviews/massive-vi
 ## Sources
 
 - The author’s own description of Massive Vinegar Joe Platform, given in full on this page
-- [Massive Vinegar Joe Platform book portfolio (original flipbook)](https://heyzine.com/flip-book/a57fca1950.html)
+- [Massive Vinegar Joe Platform book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/massive-vinegar-joe-platform/#book-reader)
 - [Editorial review of Massive Vinegar Joe Platform — Olivia Johnson, PacificReviews](https://stephenfmontagnabooks.com/reviews/massive-vinegar-joe-platform/)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-12-0; Hardback ISBN-13 978-1-970301-13-7
 - [Bookseller listing: Massive Vinegar Joe Platform (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=qXkxD5XWxI6h96YDYuH4crYol1CG7HiyY3rPVPmwsfM)

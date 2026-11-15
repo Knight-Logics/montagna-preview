@@ -50,7 +50,7 @@ The Birth of Wind [book page](https://stephenfmontagnabooks.com/books/birth-of-w
 ## Sources
 
 - [The author’s own description of Birth of Wind](https://stephenfmontagnabooks.com/books/birth-of-wind/)
-- [Birth of Wind book portfolio (original flipbook)](https://heyzine.com/flip-book/1d96307d0b.html)
+- [Birth of Wind book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/birth-of-wind/#book-reader)
 - [Editorial review of Birth of Wind — Dan Holloway, Pacific Book Review](https://stephenfmontagnabooks.com/reviews/birth-of-wind/)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-00-7; Hardback ISBN-13 978-1-970301-01-4
 - [Bookseller listing: Birth Of Wind (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=cFPWj7UuXFwZMai2eW1QYOFlbddiq46evFxlfAyLhBs)

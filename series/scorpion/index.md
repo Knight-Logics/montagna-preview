@@ -26,7 +26,7 @@ The Special Forces leader at the center of the Scorpion Trilogy, a captain by Da
 
 ### Are there trailers for the Scorpion Trilogy?
 
-Yes: trailers for [Eagle’s Talon](https://stephenfmontagnabooks.com/books/eagle-s-talon/) and [Daughter of the Scorpion](https://stephenfmontagnabooks.com/books/daughter-of-the-scorpion/) play on their pages and in the [screening room](https://stephenfmontagnabooks.com/films/).
+Yes. Trailers for [Eagle’s Talon](https://stephenfmontagnabooks.com/books/eagle-s-talon/), [The Scorpion Sting](https://stephenfmontagnabooks.com/books/the-scorpion-sting/) and [Daughter of the Scorpion](https://stephenfmontagnabooks.com/books/daughter-of-the-scorpion/) are in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ## Cite this page
 

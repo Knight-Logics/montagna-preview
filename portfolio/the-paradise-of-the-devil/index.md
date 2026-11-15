@@ -55,7 +55,7 @@ The Paradise of the Devil [book page](https://stephenfmontagnabooks.com/books/th
 ## Sources
 
 - [The author’s own description of The Paradise of the Devil](https://stephenfmontagnabooks.com/books/the-paradise-of-the-devil/)
-- [The Paradise of the Devil book portfolio (original flipbook)](https://heyzine.com/flip-book/78a94573a3.html)
+- [The Paradise of the Devil book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/the-paradise-of-the-devil/#book-reader)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-28-1; Hardback ISBN-13 978-1-970301-29-8
 - [Bookseller listing: The Paradise Of The Devil (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=cKicxujLdXC5yAc7CipPFDPpsstyiNmyS2Uc5pANIQE)
 

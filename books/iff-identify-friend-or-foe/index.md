@@ -59,7 +59,7 @@ Read the [book portfolio](https://stephenfmontagnabooks.com/portfolio/iff-identi
 ## Sources
 
 - The author’s own description of IFF: Identify Friend or Foe, given in full on this page
-- [IFF: Identify Friend or Foe book portfolio (original flipbook)](https://heyzine.com/flip-book/5a4db8eecc.html)
+- [IFF: Identify Friend or Foe book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/iff-identify-friend-or-foe/#book-reader)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-38-0; Hardback ISBN-13 978-1-970301-39-7
 - [Bookseller listing: IFF: Identify Friend Or Foe (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=T1g5rKWc6Pdi8aKJpbRWcTYqs6KxlQwFHjYH7NS0jyw)
 

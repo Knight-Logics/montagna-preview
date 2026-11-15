@@ -15,6 +15,7 @@ A doctor engineers a carbon-eating microbe from crude oil to clean the air, unti
 - Genre: Science bioterror thriller
 - Paperback: ISBN-13 978-1-970301-40-3
 - Hardback: ISBN-13 978-1-970301-41-0
+- Trailer: https://stephenfmontagnabooks.com/films/operation-glass-slipper-trailer.mp4
 
 **A discovery that could heal the atmosphere—or become a weapon.**
 

@@ -59,7 +59,7 @@ Read the [book portfolio](https://stephenfmontagnabooks.com/portfolio/the-warnin
 ## Sources
 
 - The author’s own description of The Warning of Ramses, given in full on this page
-- [The Warning of Ramses book portfolio (original flipbook)](https://heyzine.com/flip-book/40c09b412a.html)
+- [The Warning of Ramses book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/the-warning-of-ramses/#book-reader)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-34-2; Hardback ISBN-13 978-1-970301-35-9
 - [Bookseller listing: The Warning Of Ramses (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=4UgrTpv21e0pN2cxZ4mxRYTAvqWqGySTDurXrVEpxJu)
 

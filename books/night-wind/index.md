@@ -16,6 +16,7 @@ The FBI finds Wind’s sword and an agent brings it to America, where the samura
 - Series: Wind Trilogy, Book 3
 - Paperback: ISBN-13 978-1-970301-04-5
 - Hardback: ISBN-13 978-1-970301-05-2
+- Trailer: https://stephenfmontagnabooks.com/films/night-wind-trailer.mp4
 
 **The sword crosses an ocean. The warrior’s duty follows.**
 
@@ -40,6 +41,10 @@ Wind’s sword is discovered once again, this time by the FBI. The agent respons
 ### Is Night Wind the last book in the Wind Trilogy?
 
 Yes. Night Wind is book three, after [Birth of Wind](https://stephenfmontagnabooks.com/books/birth-of-wind/) and [The Wind’s Breathe](https://stephenfmontagnabooks.com/books/the-wind-s-breathe/). The review published with it calls it the culminating volume.
+
+### Is there a trailer for Night Wind?
+
+Yes. It runs 3 minutes 29 seconds and plays from this site in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ### What are the ISBNs for Night Wind?
 

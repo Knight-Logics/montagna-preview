@@ -55,7 +55,7 @@ Read the [editorial review](https://stephenfmontagnabooks.com/reviews/code-cold-
 ## Sources
 
 - The author’s own description of Code Cold Fire Alert, given in full on this page
-- [Code Cold Fire Alert book portfolio (original flipbook)](https://heyzine.com/flip-book/203a4aa3b0.html)
+- [Code Cold Fire Alert book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/code-cold-fire-alert/#book-reader)
 - [Editorial review of Code Cold Fire Alert — Chancy Smith, The BookMarks Reviewer](https://stephenfmontagnabooks.com/reviews/code-cold-fire-alert/)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-26-7; Hardback ISBN-13 978-1-970301-27-4
 - [Bookseller listing: Code Cold Fire Alert (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=SLxMMsENvE2BzAd0ZimCYol6YZ0KvXtYhPRvgAzMZ8Z)

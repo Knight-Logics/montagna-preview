@@ -57,7 +57,7 @@ The God’s Sword of Justice [book page](https://stephenfmontagnabooks.com/books
 ## Sources
 
 - [The author’s own description of God’s Sword of Justice](https://stephenfmontagnabooks.com/books/god-s-sword-of-justice/)
-- [God’s Sword of Justice book portfolio (original flipbook)](https://heyzine.com/flip-book/9461c877d8.html)
+- [God’s Sword of Justice book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/god-s-sword-of-justice/#book-reader)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-36-6; Hardback ISBN-13 978-1-970301-37-3
 - [Bookseller listing: God's Sword Of Justice (shop.ingramspark.com)](https://shop.ingramspark.com/b/084?params=91D3CWjRX3mWZzxrlR36nu14nskKXQhgR5XsmznpD8x)
 

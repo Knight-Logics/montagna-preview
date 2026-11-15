@@ -55,7 +55,7 @@ The Trump’s Brass Escalator [book page](https://stephenfmontagnabooks.com/book
 ## Sources
 
 - [The author’s own description of Trump’s Brass Escalator](https://stephenfmontagnabooks.com/books/trump-s-brass-escalator/)
-- [Trump’s Brass Escalator book portfolio (original flipbook)](https://heyzine.com/flip-book/b40f761d16.html)
+- [Trump’s Brass Escalator book portfolio, the published pages on this site](https://stephenfmontagnabooks.com/books/trump-s-brass-escalator/#book-reader)
 - [Editorial review of Trump’s Brass Escalator — Patricia L. Harmon, Senior Reviewer, BlueInk Review](https://stephenfmontagnabooks.com/reviews/trump-s-brass-escalator/)
 - Edition records from the author’s IngramSpark listings: Paperback ISBN-13 978-1-970301-16-8; Hardback ISBN-13 978-1-970301-17-5
 
