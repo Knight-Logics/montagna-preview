@@ -29,14 +29,15 @@
     const availableW = Math.max(240, native.clientWidth);
     const chrome = (nav?.offsetHeight || 0) + (bar?.offsetHeight || 0) + (full ? 36 : 16);
     const availableH = Math.max(280, native.clientHeight - chrome);
-    const single = availableW < 1000;
-    const ratio = single ? pw / ph : (pw * 2) / ph;
+    // One page below this width. It matches 2 * pageSize.minWidth, which is when the
+    // page-turn engine itself switches to a single page.
+    const single = availableW < 400;
+    const ratio = (single ? pw : pw * 2) / ph;
     let width = availableW;
     let height = width / ratio;
-    if ((full || !single) && height > availableH) {
+    if (height > availableH) {
       height = availableH;
       width = Math.min(availableW, height * ratio);
-      height = width / ratio;
     }
     theatre.style.width = Math.floor(width) + 'px';
     theatre.style.height = Math.floor(height) + 'px';
@@ -51,7 +52,7 @@
       width: 700,
       height: Math.round(700 * ratio),
       size: 'stretch',
-      minWidth: 500,
+      minWidth: 200,
       maxWidth: 1600,
       minHeight: Math.round(500 * ratio),
       maxHeight: Math.round(1600 * ratio),
