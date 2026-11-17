@@ -577,6 +577,24 @@ body.folio-screen-open #book-reader{z-index:300}
 .policy-page .prose ul{margin:0 0 18px;padding-left:1.2em}
 .policy-page .prose li{margin:0 0 8px}
 .policy-page .prose a{color:#1a4034;border-bottom:1px solid #b08a45}
+
+/* Nick, 17 Nov 2026: a 90vh viewer, desktop spreads, optional scan zoom.
+   Higher specificity intentionally supersedes legacy small-screen/fullscreen heights. */
+[data-folio] .folio-theatre,
+[data-folio] .folio-native-panel:fullscreen .folio-theatre,
+[data-folio] .folio-native-panel.folio-expanded .folio-theatre{
+  box-sizing:border-box;flex:0 0 auto;width:100%;height:90vh;min-height:0;
+  max-height:none;max-width:100%;margin:0;overflow:auto;position:relative;
+  display:flex;align-items:safe center;justify-content:safe center;
+}
+[data-folio] .folio-book-host{flex:none;max-width:none;margin:auto;}
+[data-folio] .folio-native-panel:fullscreen,
+[data-folio] .folio-native-panel.folio-expanded{justify-content:flex-start;overflow:auto;}
+.folio-zoom{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;font-size:14px;}
+.folio-zoom button{color:#f7f1e4;border:1px solid #bca570;background:#153d36;padding:8px 14px;font:inherit;cursor:pointer;}
+.folio-zoom button:disabled{opacity:.45;cursor:default;}
+.folio-zoom output{min-width:3em;text-align:center;}
+.folio-zoom span{font-size:14px;color:#d7e0d4;}
 /* Spectacle layer — 3D books, hero featured stage, library ring, 3D trilogies, premiere.
    Loaded after style.css + living.css. Generated markup lives in scripts/spectacle.py. */
 

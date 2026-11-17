@@ -14,36 +14,39 @@
   const next = root.querySelector('[data-folio-next]');
   const status = root.querySelector('.folio-page-status');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  let book = null, mode = 'book';
+  let book = null, mode = 'book', zoom = 1;
+  const narrow = () => native.clientWidth < 900;
+  const zoomBar = document.createElement('div');
+  zoomBar.className = 'folio-zoom';
+  zoomBar.innerHTML = '<button type="button" data-zoom="out" aria-label="Zoom out">−</button><output aria-live="polite">Fit</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit pages</button><span>Small print? Zoom in and scroll to read.</span>';
+  theatre.after(zoomBar);
 
   function isPanelFull() {
     return document.fullscreenElement === native || native.classList.contains('folio-expanded');
   }
 
   function fitStage() {
-    const nav = root.querySelector('.folio-navigation');
-    const bar = root.querySelector('.folio-progress');
     const pw = Number(host.dataset.pageW) || 900;
     const ph = Number(host.dataset.pageH) || 1260;
-    const full = isPanelFull();
-    const availableW = Math.max(240, native.clientWidth);
-    const chrome = (nav?.offsetHeight || 0) + (bar?.offsetHeight || 0) + (full ? 36 : 16);
-    const availableH = Math.max(280, native.clientHeight - chrome);
-    // One page until the screen can hold two scans side by side at their real size.
-    // The cutoff matches 2 * pageSize.minWidth, which is when the page-turn engine
-    // itself switches to a single page. The page scrolls; the type is not shrunk to fit.
-    const single = availableW < 2400;
+    const single = narrow();
+    // The viewer stays 90vh; only the inner book changes size. Below 900px of
+    // usable reader width (phones / portrait tablets), keep one readable page.
+    const availableW = theatre.clientWidth;
+    const availableH = theatre.clientHeight;
     const ratio = (single ? pw : pw * 2) / ph;
-    const cap = Math.min(availableW, single ? pw : pw * 2);
-    let width = cap;
-    let height = width / ratio;
-    if (full && height > availableH) {
-      height = availableH;
-      width = Math.min(cap, height * ratio);
-    }
-    theatre.style.width = Math.floor(width) + 'px';
-    theatre.style.height = Math.floor(height) + 'px';
+    const width = Math.min(availableW, availableH * ratio);
+    const height = width / ratio;
+    host.style.width = Math.floor(width * zoom) + 'px';
+    host.style.height = Math.floor(height * zoom) + 'px';
     theatre.dataset.spread = single ? 'single' : 'open';
+    theatre.dataset.zoom = String(zoom);
+    if (book) {
+      book.getSettings().usePortrait = single;
+      book.getSettings().minWidth = single ? 4000 : 100;
+    }
+    zoomBar.querySelector('output').textContent = zoom === 1 ? 'Fit' : Math.round(zoom * 100) + '%';
+    zoomBar.querySelector('[data-zoom="out"]').disabled = zoom <= 1;
+    zoomBar.querySelector('[data-zoom="in"]').disabled = zoom >= 4;
   }
 
   function pageSize() {
@@ -54,16 +57,16 @@
       width: 700,
       height: Math.round(700 * ratio),
       size: 'stretch',
-      minWidth: 1200,
-      maxWidth: 1600,
-      minHeight: Math.round(500 * ratio),
-      maxHeight: Math.round(1600 * ratio),
+      minWidth: narrow() ? 4000 : 100,
+      maxWidth: 8000,
+      minHeight: 100,
+      maxHeight: 12000,
       showCover: false,
-      usePortrait: true,
+      usePortrait: narrow(), // desktop: false; narrow reader: explicit single-page exception
       drawShadow: true,
       maxShadowOpacity: .32,
       flippingTime: 950,
-      autoSize: true,
+      autoSize: false,
       useMouseEvents: true,
       mobileScrollSupport: true,
       swipeDistance: 30,
@@ -84,7 +87,7 @@
     for (let i = left; i < Math.min(imgs.length, right + 3); i++) if (imgs[i].loading === 'lazy') imgs[i].loading = 'eager';
     prev.disabled = left === 0;
     next.disabled = right >= total - 1;
-    root.querySelector('.folio-progress span').style.width = ((page + 1) / total * 100) + '%';
+    root.querySelector('.folio-progress span').style.width = ((right + 1) / total * 100) + '%';
     root.dataset.currentPage = String(page + 1);
   }
 
@@ -143,6 +146,15 @@
     } catch { update(); }
   }
 
+  zoomBar.addEventListener('click', e => {
+    const action = e.target.closest('[data-zoom]')?.dataset.zoom;
+    if (!action) return;
+    zoom = action === 'fit' ? 1 : Math.max(1, Math.min(4, zoom + (action === 'in' ? .5 : -.5)));
+    fitStage();
+    book?.update();
+    update();
+    if (zoom === 1) { theatre.scrollTop = 0; theatre.scrollLeft = 0; }
+  });
   prev.addEventListener('click', () => turn(-1));
   next.addEventListener('click', () => turn(1));
   root.querySelectorAll('[data-folio-mode]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.folioMode)));
