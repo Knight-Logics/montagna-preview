@@ -16,7 +16,7 @@ The FBI finds Wind’s sword and an agent brings it to America, where the samura
 - Series: Wind Trilogy, Book 3
 - Paperback: ISBN-13 978-1-970301-04-5
 - Hardback: ISBN-13 978-1-970301-05-2
-- Trailer: https://stephenfmontagnabooks.com/films/night-wind-trailer.mp4
+- Trailer: https://www.youtube.com/watch?v=Ty8m-8fCx0Y
 
 **The sword crosses an ocean. The warrior’s duty follows.**
 
@@ -44,7 +44,7 @@ Yes. Night Wind is book three, after [Birth of Wind](https://stephenfmontagnaboo
 
 ### Is there a trailer for Night Wind?
 
-Yes. It runs 3 minutes 29 seconds and plays from this site in the [screening room](https://stephenfmontagnabooks.com/films/).
+Yes. It runs 3 minutes 29 seconds and was published on YouTube on 17 November 2026. It plays on this page and in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ### What are the ISBNs for Night Wind?
 

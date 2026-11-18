@@ -6,21 +6,21 @@ Canonical: https://stephenfmontagnabooks.com/films/
 Author: Stephen Francis Montagna  
 Updated: 2026-11-07
 
-Watch the Wind and Scorpion book trailers, The Vector and Operation Glass Slipper. Glass Slipper and four more films play from this page now.
+Watch Stephen Francis Montagna’s official book trailers. Six films play from YouTube, including Night Wind, The Vector and Daughter of the Scorpion.
 
 ## A trailer for each of these books
 
 - [Birth of Wind](https://stephenfmontagnabooks.com/books/birth-of-wind/) — official trailer, 2 minutes 59 seconds, published 10 August 2026
 - [Eagle’s Talon](https://stephenfmontagnabooks.com/books/eagle-s-talon/) — trailer, 2 minutes 46 seconds, published 13 August 2026
-- [Daughter of the Scorpion](https://stephenfmontagnabooks.com/books/daughter-of-the-scorpion/) — trailer, 3 minutes 12 seconds, published 13 August 2026
+- [Daughter of the Scorpion](https://stephenfmontagnabooks.com/books/daughter-of-the-scorpion/) — trailer, 3 minutes 12 seconds, published 17 November 2026
 - [The Wind’s Breathe](https://stephenfmontagnabooks.com/books/the-wind-s-breathe/) — trailer, 3 minutes 5 seconds, played from this site
-- [Night Wind](https://stephenfmontagnabooks.com/books/night-wind/) — trailer, 3 minutes 29 seconds, played from this site
-- [The Scorpion Sting](https://stephenfmontagnabooks.com/books/the-scorpion-sting/) — trailer, 3 minutes 31 seconds, played from this site
-- [The Vector](https://stephenfmontagnabooks.com/books/the-vector/) — refined trailer, 1 minute 51 seconds, played from this site
+- [Night Wind](https://stephenfmontagnabooks.com/books/night-wind/) — trailer, 3 minutes 29 seconds, published 17 November 2026
+- [The Scorpion Sting](https://stephenfmontagnabooks.com/books/the-scorpion-sting/) — trailer, 3 minutes 32 seconds, published 17 November 2026
+- [The Vector](https://stephenfmontagnabooks.com/books/the-vector/) — official trailer, 3 minutes 11 seconds, published 17 November 2026
 - [Operation Glass Slipper](https://stephenfmontagnabooks.com/books/operation-glass-slipper/) — official trailer, 3 minutes 10 seconds, played from this site
 - The Wind Trilogy — a 71-second film introducing all three novels, hosted on this site
 
-Birth of Wind, Eagle’s Talon and Daughter of the Scorpion are on YouTube and play here in a privacy-enhanced player that loads only when you press play. The Wind’s Breathe, Night Wind, The Scorpion Sting, The Vector, Operation Glass Slipper and the Wind Trilogy film play directly from this site. Older Vector drafts are not used.
+Birth of Wind, Eagle’s Talon, Daughter of the Scorpion, Night Wind, The Scorpion Sting and The Vector are on YouTube and play here in a privacy-enhanced player that loads only when you press play. The Wind’s Breathe, Operation Glass Slipper and the Wind Trilogy film play directly from this site.
 
 ## Questions and answers
 
@@ -30,7 +30,7 @@ The six Wind and Scorpion novels, plus [The Vector](https://stephenfmontagnabook
 
 ### Where else can I watch the trailers?
 
-Birth of Wind, Eagle’s Talon and Daughter of the Scorpion are also on YouTube. The Wind’s Breathe, Night Wind, The Scorpion Sting, The Vector and Operation Glass Slipper play from this site. Each novel’s page links to its trailer.
+Birth of Wind, Eagle’s Talon, Daughter of the Scorpion, Night Wind, The Scorpion Sting and The Vector are on YouTube. The Wind’s Breathe and Operation Glass Slipper play from this site. Each novel’s page links to its trailer.
 
 ### How long is the Operation Glass Slipper trailer?
 

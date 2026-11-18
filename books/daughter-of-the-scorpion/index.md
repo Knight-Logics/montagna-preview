@@ -16,7 +16,7 @@ Secret papers expose an Iraqi designer bioweapon that could end all life. Captai
 - Series: Scorpion Trilogy
 - Paperback: ISBN-13 978-1-970301-08-3
 - Hardback: ISBN-13 978-1-970301-09-0
-- Trailer: https://www.youtube.com/watch?v=2sp5fAoJSh4
+- Trailer: https://www.youtube.com/watch?v=A6y0RpftUXs
 
 **One woman may know the location of a weapon that could end everything.**
 
@@ -40,7 +40,7 @@ The discovery of secret military papers exposes an Iraqi biological weapons prog
 
 ### Is there a trailer for Daughter of the Scorpion?
 
-Yes. The book trailer runs 3 minutes 12 seconds and was published on YouTube on 13 August 2026. It plays on this page and in the [screening room](https://stephenfmontagnabooks.com/films/).
+Yes. The book trailer runs 3 minutes 12 seconds and was published on YouTube on 17 November 2026. It plays on this page and in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ### Who is Ayesha in Daughter of the Scorpion?
 
