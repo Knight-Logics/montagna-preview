@@ -16,7 +16,7 @@ Japan, 1333: a female samurai fights for her place in a world of men, and the sh
 - Series: Wind Trilogy, Book 1
 - Paperback: ISBN-13 978-1-970301-00-7
 - Hardback: ISBN-13 978-1-970301-01-4
-- Trailer: https://www.youtube.com/watch?v=H99Y-25XNus
+- Trailer: https://www.youtube.com/watch?v=MN3h0gvmYDc
 
 **In a world that denied her a place, she became a legend.**
 
@@ -44,7 +44,7 @@ Women of samurai families who trained for battle are known as onna-bugeisha or o
 
 ### Is there a trailer for Birth of Wind?
 
-Yes. The official trailer runs 2 minutes 59 seconds and was published on YouTube on 10 August 2026. A separate 71-second film introduces the whole Wind Trilogy in the [screening room](https://stephenfmontagnabooks.com/films/).
+Yes. The official trailer runs 2 minutes 59 seconds and was published on YouTube on 17 November 2026. A separate 71-second film introduces the whole Wind Trilogy in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ### Where does Birth of Wind fit in the Wind Trilogy?
 

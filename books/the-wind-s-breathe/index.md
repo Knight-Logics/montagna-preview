@@ -16,7 +16,7 @@ Wind’s cursed sword resurfaces in Japan in 1996, and its new owner turns her s
 - Series: Wind Trilogy, Book 2
 - Paperback: ISBN-13 978-1-970301-02-1
 - Hardback: ISBN-13 978-1-970301-03-8
-- Trailer: https://stephenfmontagnabooks.com/films/the-winds-breath-trailer.mp4
+- Trailer: https://www.youtube.com/watch?v=Oxamsz1ZUjw
 
 **Centuries later, a cursed sword awakens in modern Japan.**
 
@@ -48,7 +48,7 @@ Yes. The second novel begins centuries after [Birth of Wind](https://stephenfmon
 
 ### Is there a trailer for The Wind’s Breathe?
 
-Yes. The revised trailer runs 3 minutes 5 seconds and plays from this site in the [screening room](https://stephenfmontagnabooks.com/films/).
+Yes. The book trailer runs 3 minutes 5 seconds and was published on YouTube on 17 November 2026. It plays on this page and in the [screening room](https://stephenfmontagnabooks.com/films/).
 
 ### What are the ISBNs for The Wind’s Breathe?
 
