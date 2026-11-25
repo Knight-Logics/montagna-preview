@@ -1,0 +1,265 @@
+{
+  "tool": "website-audit-visibility",
+  "generatedAt": "2026-11-22T15:30:53.297Z",
+  "site": {
+    "name": "Stephen Francis Montagna — official author website",
+    "domain": "stephenfmontagnabooks.com",
+    "productionUrl": "https://stephenfmontagnabooks.com"
+  },
+  "pack": {
+    "id": "full-api",
+    "label": "Full Website Audit via API",
+    "auditAccess": "full"
+  },
+  "date": "2026-11-22",
+  "runDir": "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22",
+  "credentials": {
+    "present": [
+      "GOOGLE_API_KEY",
+      "GSC_OAUTH_CLIENT_ID",
+      "BING_WEBMASTER_API_KEY",
+      "BING_WEBMASTER_OAUTH_CLIENT_ID",
+      "SERPER_API_KEY",
+      "DATAFORSEO_LOGIN",
+      "DATAFORSEO_PASSWORD",
+      "CLARITY_PROJECT_ID",
+      "CLARITY_TOKENS_LOADED",
+      "INDEXNOW_KEY",
+      "GBP_OAUTH_CLIENT_ID",
+      "GBP_REFRESH_TOKEN",
+      "SALS_GBP_LOCATION_ID"
+    ],
+    "missing": [
+      "CLARITY_API_TOKEN"
+    ]
+  },
+  "results": [
+    {
+      "module": "gbp",
+      "status": "skipped",
+      "reason": "No gbpLocationEnv for this domain (no GBP listing in accounts.env map)"
+    },
+    {
+      "module": "gsc-api",
+      "status": "ok",
+      "reason": "GSC API audit completed (no UI export)",
+      "artifacts": [
+        "E:\\Website Audit\\GSC\\runs\\2026-11-22\\stephenfmontagnabooks.com\\api\\performance.json"
+      ],
+      "startedAt": "2026-11-22T15:26:43.004Z",
+      "finishedAt": "2026-11-22T15:27:53.761Z",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "receipts": [
+          {
+            "path": "E:\\Website Audit\\GSC\\runs\\2026-11-22\\stephenfmontagnabooks.com\\api\\performance.json",
+            "bytes": 15599,
+            "modifiedAt": "2026-11-22T15:26:58.110Z",
+            "sha256": "5451c10b3fdb771e44107e299ac74fb3a1e2566e64083ad05eeb647152dfe969",
+            "scope": "sc-domain:stephenfmontagnabooks.com"
+          }
+        ]
+      }
+    },
+    {
+      "module": "schema",
+      "status": "failed",
+      "reason": "schema-audit.mjs exited 1; Expected evidence artifact was not written",
+      "artifacts": [],
+      "startedAt": "2026-11-22T15:27:53.801Z",
+      "finishedAt": "2026-11-22T15:27:54.341Z",
+      "verification": {
+        "passed": false,
+        "issues": [
+          "Expected evidence artifact was not written"
+        ],
+        "receipts": []
+      }
+    },
+    {
+      "module": "security-headers",
+      "status": "ok",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\security-headers.json"
+      ],
+      "startedAt": "2026-11-22T15:27:54.530Z",
+      "finishedAt": "2026-11-22T15:27:54.749Z",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "receipts": [
+          {
+            "path": "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\security-headers.json",
+            "bytes": 2066,
+            "modifiedAt": "2026-11-22T15:27:54.738Z",
+            "sha256": "1828c1a2c29f5b45f6475a338021ab8c39ed7198b05b343f73282f3a930c90f1",
+            "scope": "stephenfmontagnabooks.com"
+          }
+        ]
+      }
+    },
+    {
+      "module": "psi",
+      "status": "ok",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\psi\\psi.json"
+      ],
+      "startedAt": "2026-11-22T15:27:54.752Z",
+      "finishedAt": "2026-11-22T15:29:14.115Z",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "receipts": [
+          {
+            "path": "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\psi\\psi.json",
+            "bytes": 3013,
+            "modifiedAt": "2026-11-22T15:29:14.113Z",
+            "sha256": "7412c8b3a53b9b61f19596f45f60084d564a95f01866561e0551a0b4492bbf69",
+            "scope": "stephenfmontagnabooks.com"
+          }
+        ]
+      }
+    },
+    {
+      "module": "crux",
+      "status": "ok",
+      "reason": "CrUX API connected — no field data for this origin yet (normal for smaller/low-traffic sites)",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\crux\\crux.json"
+      ],
+      "startedAt": "2026-11-22T15:29:14.117Z",
+      "finishedAt": "2026-11-22T15:29:14.346Z",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "receipts": [
+          {
+            "path": "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\crux\\crux.json",
+            "bytes": 337,
+            "modifiedAt": "2026-11-22T15:29:14.301Z",
+            "sha256": "3b2a415950963c38a71f7695d79f12a36b6f3296ffda6a6151fff8f70d8083f0",
+            "scope": "stephenfmontagnabooks.com"
+          }
+        ]
+      }
+    },
+    {
+      "module": "bing",
+      "status": "ok",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\bing\\bing.json"
+      ],
+      "startedAt": "2026-11-22T15:29:14.347Z",
+      "finishedAt": "2026-11-22T15:29:17.872Z",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "receipts": [
+          {
+            "path": "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\bing\\bing.json",
+            "bytes": 3591,
+            "modifiedAt": "2026-11-22T15:29:17.871Z",
+            "sha256": "0a2f2993d1dcc0af1aa9503276954615e908ff0a6505bfadc552bdaf6f186691",
+            "scope": "stephenfmontagnabooks.com"
+          }
+        ]
+      }
+    },
+    {
+      "module": "seo-engine",
+      "status": "ok",
+      "reason": "Completed with 1 warning(s)",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\seo-engine\\opportunities.json",
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\seo-engine\\report.md",
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\seo-engine\\results.json",
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\seo-engine\\serp-budget.json"
+      ],
+      "startedAt": "2026-11-22T15:29:17.873Z",
+      "finishedAt": "2026-11-22T15:29:49.167Z"
+    },
+    {
+      "module": "clarity",
+      "status": "skipped",
+      "reason": "Clarity skipped — missing CLARITY_API_TOKEN (project za6mj6fqaz detected). Generate token in Clarity → Settings → Data Export.",
+      "artifacts": [],
+      "startedAt": "2026-11-22T15:29:49.168Z",
+      "finishedAt": "2026-11-22T15:29:49.169Z",
+      "verification": {
+        "passed": false,
+        "issues": [],
+        "receipts": []
+      }
+    },
+    {
+      "module": "indexnow",
+      "status": "ok",
+      "reason": "IndexNow HTTP 202",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\indexnow\\indexnow.json"
+      ],
+      "startedAt": "2026-11-22T15:29:49.220Z",
+      "finishedAt": "2026-11-22T15:29:49.940Z"
+    },
+    {
+      "module": "geo",
+      "status": "ok",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\geo\\geo.json"
+      ],
+      "startedAt": "2026-11-22T15:29:49.984Z",
+      "finishedAt": "2026-11-22T15:29:50.563Z"
+    },
+    {
+      "module": "analytics",
+      "status": "ok",
+      "artifacts": [
+        "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\analytics\\analytics.json"
+      ],
+      "startedAt": "2026-11-22T15:29:50.613Z",
+      "finishedAt": "2026-11-22T15:29:55.648Z",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "receipts": [
+          {
+            "path": "E:\\Website Audit\\runs\\stephenfmontagnabooks.com\\2026-11-22\\modules\\analytics\\analytics.json",
+            "bytes": 1679,
+            "modifiedAt": "2026-11-22T15:29:55.637Z",
+            "sha256": "3b2a4d9e6fed0c1daf8c437dae166f154537bb813fa6091941a55aff7a444974",
+            "scope": "stephenfmontagnabooks.com"
+          }
+        ]
+      }
+    },
+    {
+      "module": "semrush",
+      "status": "ok",
+      "reason": "Semrush Playwright scrape complete",
+      "startedAt": "2026-11-22T15:29:55.651Z",
+      "finishedAt": "2026-11-22T15:30:53.040Z"
+    },
+    {
+      "module": "semrush-import",
+      "status": "skipped",
+      "reason": "E:\\Website Audit\\imports\\stephenfmontagnabooks.com\\semrush is empty — run tools/semrush-site-audit.mjs or export CSV from Semrush Site Audit",
+      "startedAt": "2026-11-22T15:30:53.109Z",
+      "finishedAt": "2026-11-22T15:30:53.124Z"
+    },
+    {
+      "module": "screamingfrog-import",
+      "status": "skipped",
+      "reason": "No Screaming Frog exports at E:\\Website Audit\\imports\\stephenfmontagnabooks.com\\screamingfrog. Export CSV from SF into that folder.",
+      "startedAt": "2026-11-22T15:30:53.172Z",
+      "finishedAt": "2026-11-22T15:30:53.202Z"
+    },
+    {
+      "module": "log-import",
+      "status": "skipped",
+      "reason": "No log exports at E:\\Website Audit\\imports\\stephenfmontagnabooks.com\\logs. Drop .log/.txt samples there or set LOG_EXPORT_DIR.",
+      "startedAt": "2026-11-22T15:30:53.241Z",
+      "finishedAt": "2026-11-22T15:30:53.260Z"
+    }
+  ]
+}
