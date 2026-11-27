@@ -16,7 +16,7 @@ Wind’s cursed sword resurfaces in Japan in 1996, and its new owner turns her s
 - Series: Wind Trilogy, Book 2
 - Paperback: ISBN-13 978-1-970301-02-1
 - Hardback: ISBN-13 978-1-970301-03-8
-- Trailer: https://www.youtube.com/watch?v=Oxamsz1ZUjw
+- Trailer: https://www.youtube.com/watch?v=wKYLvfWFBew
 
 **Centuries later, a cursed sword awakens in modern Japan.**
 

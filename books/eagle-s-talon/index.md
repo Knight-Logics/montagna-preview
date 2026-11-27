@@ -16,7 +16,7 @@ Saddam Hussein sends assassins after the American President. Robert Walker’s S
 - Series: Scorpion Trilogy, Book 1
 - Paperback: ISBN-13 978-1-970301-10-6
 - Hardback: ISBN-13 978-1-970301-11-3
-- Trailer: https://www.youtube.com/watch?v=fLsnCc6V6g4
+- Trailer: https://www.youtube.com/watch?v=ggWJuD2Q2K4
 
 **An assassination plot. An elite team. A race into hostile territory.**
 

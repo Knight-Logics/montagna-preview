@@ -15,7 +15,7 @@ After October 7, Iran hides a bioweapon in the false teeth of eight volunteers a
 - Genre: Geopolitical bioterror thriller
 - Paperback: ISBN-13 978-1-970301-32-8
 - Hardback: ISBN-13 978-1-970301-33-5
-- Trailer: https://www.youtube.com/watch?v=Pan13NpLcqk
+- Trailer: https://www.youtube.com/watch?v=1yzh-fP3NOQ
 
 **Eight operatives. Eight cities. A threat without borders.**
 

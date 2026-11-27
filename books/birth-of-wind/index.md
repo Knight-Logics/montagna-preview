@@ -16,7 +16,7 @@ Japan, 1333: a female samurai fights for her place in a world of men, and the sh
 - Series: Wind Trilogy, Book 1
 - Paperback: ISBN-13 978-1-970301-00-7
 - Hardback: ISBN-13 978-1-970301-01-4
-- Trailer: https://www.youtube.com/watch?v=MN3h0gvmYDc
+- Trailer: https://www.youtube.com/watch?v=irs0yP0mksI
 
 **In a world that denied her a place, she became a legend.**
 

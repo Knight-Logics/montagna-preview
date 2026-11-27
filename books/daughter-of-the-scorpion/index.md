@@ -16,7 +16,7 @@ Secret papers expose an Iraqi designer bioweapon that could end all life. Captai
 - Series: Scorpion Trilogy
 - Paperback: ISBN-13 978-1-970301-08-3
 - Hardback: ISBN-13 978-1-970301-09-0
-- Trailer: https://www.youtube.com/watch?v=XXDo6m8tSSk
+- Trailer: https://www.youtube.com/watch?v=kSLZMgifSlo
 
 **One woman may know the location of a weapon that could end everything.**
 

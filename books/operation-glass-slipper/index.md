@@ -15,7 +15,7 @@ A doctor engineers a carbon-eating microbe from crude oil to clean the air, unti
 - Genre: Science bioterror thriller
 - Paperback: ISBN-13 978-1-970301-40-3
 - Hardback: ISBN-13 978-1-970301-41-0
-- Trailer: https://www.youtube.com/watch?v=q6eC5HCnDBo
+- Trailer: https://www.youtube.com/watch?v=bO1Mx-vX1-8
 
 **A discovery that could heal the atmosphere—or become a weapon.**
 

@@ -16,7 +16,7 @@ Saddam Hussein sends a new cell into the U.S. to kill the captured operative and
 - Series: Scorpion Trilogy
 - Paperback: ISBN-13 978-1-970301-06-9
 - Hardback: ISBN-13 978-1-970301-07-6
-- Trailer: https://www.youtube.com/watch?v=6hsYib73RUE
+- Trailer: https://www.youtube.com/watch?v=XgwzDz-Adsg
 
 **The mission is over. The retaliation has only begun.**
 
